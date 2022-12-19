@@ -4,16 +4,9 @@ using UnityEngine;
 
 public class Rotate : MonoBehaviour
 {
-    [SerializeField] [Tooltip("Nº horas en rotar sobre sí mismo")]
+    [SerializeField] [Tooltip("Nº horas en completar movimiento de rotación")]
     public float durationRotation;
-
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    
 
     // Update is called once per frame
     void Update()
