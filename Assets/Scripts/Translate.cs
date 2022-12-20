@@ -13,10 +13,11 @@ public class Translate : MonoBehaviour
     private float durationTranslation = 360f;
 
     [SerializeField][Tooltip("Velocidad del movimiento de traslación")]
-    public float translationSpeed = 20f;
+    public float translationSpeed = 10f;
 
-    [SerializeField][Tooltip("Radio")]
+    [SerializeField][Tooltip("Radio grande y radio pequeño de la elipse")]
     public float distance = 3f;
+    public float otherDistance = 1.5f;
 
 
     private double sinA, cosA;
@@ -25,18 +26,18 @@ public class Translate : MonoBehaviour
     private float ecuationTime = 0.0f;
 
     // Update is called once per frame
-    void Update()
-    {
-         transform.RotateAround(target.transform.position, Vector3.up, 7200f/durationTranslation * Time.deltaTime);
+    void Update()    {
+        
+        EllipticalTranslation();
     }
 
     private void EllipticalTranslation()
     {        
         ecuationTime += Time.deltaTime * translationSpeed * 0.1f;
 
-        sincos(ecuationTime, out sinA, out cosA);
+        sincos(ecuationTime, out sinA, out cosA);        
 
-        temporalPosition = float3(distance * (float)sinA, transform.position.y, distance * (float)cosA);
+        temporalPosition = float3(target.transform.position.x + distance * (float)sinA, transform.position.y, target.transform.position.z + otherDistance * (float)cosA);
 
         transform.position = temporalPosition;
         transform.position += target.transform.position;
