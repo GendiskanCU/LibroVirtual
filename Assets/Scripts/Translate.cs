@@ -7,25 +7,28 @@ using static Unity.Mathematics.math;
 public class Translate : MonoBehaviour
 {
     [SerializeField][Tooltip("Objeto alrededor del cual gira")]
-    private GameObject target;
-
-    [SerializeField][Tooltip("Nº de días en completar el movimiento de traslación")]
-    private float durationTranslation = 360f;
+    private GameObject target;    
 
     [SerializeField][Tooltip("Velocidad del movimiento de traslación")]
     public float translationSpeed = 10f;
 
     [SerializeField][Tooltip("Radio grande y radio pequeño de la elipse")]
     public float distance = 3f;
-    public float otherDistance = 1.5f;
+    public float otherDistance = 1.7f;
 
 
     private double sinA, cosA;
     private float3 temporalPosition;
 
-    private float ecuationTime = 0.0f;
+    private Vector3 initialPosition;
 
-    // Update is called once per frame
+    private double ecuationTime = 0.0f;
+
+    
+    private void Start() {
+        initialPosition = transform.position;
+    }
+
     void Update()    {
         
         EllipticalTranslation();
@@ -41,6 +44,6 @@ public class Translate : MonoBehaviour
 
         transform.position = temporalPosition;
         transform.position += target.transform.position;
-
+        //transform.position += initialPosition;
     }
 }
