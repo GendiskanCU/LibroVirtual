@@ -40,10 +40,9 @@ public class Translate : MonoBehaviour
 
         sincos(ecuationTime, out sinA, out cosA);        
 
-        temporalPosition = float3(target.transform.position.x + distance * (float)sinA, transform.position.y, target.transform.position.z + otherDistance * (float)cosA);
+        temporalPosition = float3(target.transform.position.x + distance * (float)sinA, initialPosition.y, target.transform.position.z + otherDistance * (float)cosA);
 
         transform.position = temporalPosition;
-        transform.position += target.transform.position;
-        //transform.position += initialPosition;
+        transform.position += target.transform.position;        
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Rotate : MonoBehaviour
 {
     [SerializeField] [Tooltip("Nº horas en completar movimiento de rotación")]
-    public float durationRotation;
+    public float durationRotation = 24f;
     
 
     // Update is called once per frame
