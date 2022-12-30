@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -285,8 +285,77 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1608801301
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8859394007213496475, guid: 1f4185451a950764c89690eb27b765fa,
+        type: 3}
+      propertyPath: m_Name
+      value: MiniSolarSystem
+      objectReference: {fileID: 0}
+    - target: {fileID: 8859394007213496476, guid: 1f4185451a950764c89690eb27b765fa,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8859394007213496476, guid: 1f4185451a950764c89690eb27b765fa,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8859394007213496476, guid: 1f4185451a950764c89690eb27b765fa,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8859394007213496476, guid: 1f4185451a950764c89690eb27b765fa,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8859394007213496476, guid: 1f4185451a950764c89690eb27b765fa,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8859394007213496476, guid: 1f4185451a950764c89690eb27b765fa,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8859394007213496476, guid: 1f4185451a950764c89690eb27b765fa,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8859394007213496476, guid: 1f4185451a950764c89690eb27b765fa,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8859394007213496476, guid: 1f4185451a950764c89690eb27b765fa,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8859394007213496476, guid: 1f4185451a950764c89690eb27b765fa,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8859394007213496476, guid: 1f4185451a950764c89690eb27b765fa,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1f4185451a950764c89690eb27b765fa, type: 3}
 --- !u!1 &2045770924
 GameObject:
   m_ObjectHideFlags: 0
@@ -397,8 +466,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2045770924}
-  m_LocalRotation: {x: -0.087256156, y: -0.5043032, z: 0.05131088, w: -0.8575732}
-  m_LocalPosition: {x: -5.949486, y: 1.3699179, z: -1.7968884}
+  m_LocalRotation: {x: 0.2049244, y: -0.010277033, z: 0.0021518394, w: 0.97872156}
+  m_LocalPosition: {x: 1.4123964, y: 6.4790998, z: -18.557749}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -417,10 +486,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: SolarSystem
       objectReference: {fileID: 0}
+    - target: {fileID: 4037936926812090899, guid: f20de82fc40a861458b42b492539a2af,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4037936926812090988, guid: f20de82fc40a861458b42b492539a2af,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4037936926812090988, guid: f20de82fc40a861458b42b492539a2af,
         type: 3}

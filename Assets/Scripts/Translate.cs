@@ -10,11 +10,16 @@ public class Translate : MonoBehaviour
     private GameObject target;    
 
     [SerializeField][Tooltip("Velocidad del movimiento de traslación")]
-    public float translationSpeed = 10f;
+    private float translationSpeed = 10f;
 
-    [SerializeField][Tooltip("Radio grande y radio pequeño de la elipse")]
-    public float distance = 3f;
-    public float otherDistance = 1.7f;
+    [SerializeField][Tooltip("Radio grande de la elipse")]
+    private float distance = 3f;
+
+     [SerializeField][Tooltip("Radio pequeño de la elipse")]
+    private float otherDistance = 1.7f;
+
+    [SerializeField][Tooltip("Desviación sobre el centro del objeto objetivo")]
+    private float offset = 10f;
 
 
     private double sinA, cosA;
@@ -40,9 +45,9 @@ public class Translate : MonoBehaviour
 
         sincos(ecuationTime, out sinA, out cosA);        
 
-        temporalPosition = float3(target.transform.position.x + distance * (float)sinA, initialPosition.y, target.transform.position.z + otherDistance * (float)cosA);
+        temporalPosition = float3(target.transform.position.x + offset + distance * (float)sinA, target.transform.position.y, target.transform.position.z + otherDistance * (float)cosA);
 
         transform.position = temporalPosition;
-        transform.position += target.transform.position;        
+        //transform.position += target.transform.position;               
     }
 }
