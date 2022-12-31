@@ -21,18 +21,11 @@ public class Translate : MonoBehaviour
     [SerializeField][Tooltip("Desviación sobre el centro del objeto objetivo")]
     private float offset = 10f;
 
-
     private double sinA, cosA;
     private float3 temporalPosition;
 
-    private Vector3 initialPosition;
-
     private double ecuationTime = 0.0f;
-
     
-    private void Start() {
-        initialPosition = transform.position;
-    }
 
     void Update()    {
         
@@ -47,7 +40,6 @@ public class Translate : MonoBehaviour
 
         temporalPosition = float3(target.transform.position.x + offset + distance * (float)sinA, target.transform.position.y, target.transform.position.z + otherDistance * (float)cosA);
 
-        transform.position = temporalPosition;
-        //transform.position += target.transform.position;               
+        transform.position = temporalPosition;        
     }
 }
