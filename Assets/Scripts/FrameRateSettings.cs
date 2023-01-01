@@ -1,4 +1,4 @@
-//Asegura que la aplicación funcione a los FPS recomendados según el dispositivo en el que se ejecuta
+//Asegura que la app funcione a los FPS recomendados para el dispositivo en el que se ejecuta
 
 using System.Collections;
 using System.Collections.Generic;
@@ -18,7 +18,7 @@ public class FrameRateSettings : MonoBehaviour
         //Consulta el frame rate recomendado
         var targetFPS = VuforiaBehaviour.Instance.CameraDevice.GetRecommendedFPS();
 
-        //Asegura que la aplicación funcione a esos FPS
+        //Asegura que la app funcione a esos FPS
         if(Application.targetFrameRate != targetFPS)
         {
             Application.targetFrameRate = targetFPS;
