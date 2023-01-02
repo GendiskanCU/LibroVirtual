@@ -3,6 +3,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 
 public enum TypeOfCelestialBody
@@ -55,11 +57,24 @@ public class CelestialBodyInfo : MonoBehaviour
     private int score = 0;
     public int Score => score;
 
-    private GameObject informationCanvas;
+    private GameObject informationCanvas, informationPanel;
+    private TextMeshProUGUI descripcionTxt;
 
 
-    private void Start() {
-        informationCanvas = transform.GetChild(3).gameObject;        
+    private void Start()
+    {
+        if(transform.childCount > 0)
+        {
+            informationCanvas = transform.GetChild(0).gameObject;
+            if(informationCanvas.transform.childCount > 0)
+            {
+                informationPanel = informationCanvas.transform.GetChild(0).gameObject;
+                descripcionTxt = informationPanel.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
+                //TODO: Completar con el resto de elementos del panel
+            } 
+
+                     
+        }        
     }
 
 
@@ -67,7 +82,8 @@ public class CelestialBodyInfo : MonoBehaviour
     {
         if(type != TypeOfCelestialBody.Otro)
         {
-            informationCanvas.SetActive(true);
+            informationCanvas.SetActive(true);        
+            
         }
         else
         {
