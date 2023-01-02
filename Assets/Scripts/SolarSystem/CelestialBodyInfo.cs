@@ -1,8 +1,9 @@
-//Información sobre un cuerpo celeste
+//Controla la información de un cuerpo celeste
 
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 
 public enum TypeOfCelestialBody
 {Estrella, Planeta, Satelite, Otro};
@@ -53,4 +54,24 @@ public class CelestialBodyInfo : MonoBehaviour
     [SerializeField][Tooltip("Puntuación que otorga (si procede)")]
     private int score = 0;
     public int Score => score;
+
+    private GameObject informationCanvas;
+
+
+    private void Start() {
+        informationCanvas = transform.GetChild(3).gameObject;        
+    }
+
+
+    public void ShowBodyInfo()
+    {
+        if(type != TypeOfCelestialBody.Otro)
+        {
+            informationCanvas.SetActive(true);
+        }
+        else
+        {
+            
+        }
+    }
 }
