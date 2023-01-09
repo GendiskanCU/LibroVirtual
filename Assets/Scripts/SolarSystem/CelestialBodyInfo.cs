@@ -58,7 +58,9 @@ public class CelestialBodyInfo : MonoBehaviour
     public int Score => score;
 
     private GameObject informationCanvas, informationPanel;
-    private TextMeshProUGUI descripcionTxt;
+    private Image bodyImage;     
+    private TextMeshProUGUI nameText, descriptionText, massText, densityText,
+    gravityText, distanceText, dayText, yearText;
 
 
     private void Start()
@@ -69,7 +71,7 @@ public class CelestialBodyInfo : MonoBehaviour
             if(informationCanvas.transform.childCount > 0)
             {
                 informationPanel = informationCanvas.transform.GetChild(0).gameObject;
-                descripcionTxt = informationPanel.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
+                descriptionText = informationPanel.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
                 //TODO: Completar con el resto de elementos del panel
             } 
 
