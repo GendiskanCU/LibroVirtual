@@ -1,3 +1,5 @@
+//Muestra visualmente si se ha capturado/perdido el target
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
