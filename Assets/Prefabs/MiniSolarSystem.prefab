@@ -214,6 +214,7 @@ MonoBehaviour:
   distance: 2.5
   otherDistance: 2.45
   offset: 0
+  leadTime: 2
 --- !u!114 &951636699665760767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -325,6 +326,7 @@ MonoBehaviour:
   distance: 7
   otherDistance: 6.95
   offset: 0
+  leadTime: 5
 --- !u!114 &1608801314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -464,6 +466,7 @@ MonoBehaviour:
   distance: 2.9
   otherDistance: 2.85
   offset: 0
+  leadTime: 3
 --- !u!114 &1608801312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -602,6 +605,7 @@ MonoBehaviour:
   distance: 4.3
   otherDistance: 4.25
   offset: 0
+  leadTime: 4
 --- !u!114 &1608801313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -738,6 +742,7 @@ MonoBehaviour:
   distance: 9.9
   otherDistance: 9.85
   offset: 0
+  leadTime: 6
 --- !u!114 &1608801315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -882,6 +887,7 @@ MonoBehaviour:
   distance: 1.9
   otherDistance: 1.85
   offset: 0
+  leadTime: 0
 --- !u!114 &2146578501
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1023,6 +1029,7 @@ MonoBehaviour:
   distance: 2.15
   otherDistance: 2.1
   offset: 0
+  leadTime: 1
 --- !u!114 &1791358822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1283,6 +1290,7 @@ MonoBehaviour:
   distance: 12
   otherDistance: 11.95
   offset: 0
+  leadTime: 7
 --- !u!114 &1608801316
 MonoBehaviour:
   m_ObjectHideFlags: 0

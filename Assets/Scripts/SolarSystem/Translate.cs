@@ -23,11 +23,18 @@ public class Translate : MonoBehaviour
     [SerializeField][Tooltip("Desviación sobre el centro del objeto objetivo")]
     private float offset = 10f;
 
+    [SerializeField][Tooltip("Tiempo de adelanto para la posición inicial")]
+    [Range(0, 8f)] private float leadTime = 0;
+
     private double sinA, cosA;
     private float3 temporalPosition;
 
     private double ecuationTime = 0.0f;
     
+    private void Start() {
+        //Para marcar la posición inicial del objeto en el movimiento de rotación
+        ecuationTime = leadTime;
+    }
 
     void Update()    {
         
@@ -40,7 +47,8 @@ public class Translate : MonoBehaviour
 
         sincos(ecuationTime, out sinA, out cosA);        
 
-        temporalPosition = float3(target.transform.position.x + offset + distance * (float)sinA, target.transform.position.y, target.transform.position.z + otherDistance * (float)cosA);
+        temporalPosition = float3(target.transform.position.x + offset + distance * (float)sinA,
+        target.transform.position.y, target.transform.position.z + otherDistance * (float)cosA);
 
         transform.position = temporalPosition;        
     }
