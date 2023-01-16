@@ -192,12 +192,70 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f4185451a950764c89690eb27b765fa, type: 3}
+--- !u!1 &300401334
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 300401336}
+  - component: {fileID: 300401335}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &300401335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 300401334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 765e5b7fc0669514fad6cbfc0a9d19a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particleSystemTest: {fileID: 1100507635810511045, guid: 6547632e809df284792df3c0bcfe4372,
+    type: 3}
+--- !u!4 &300401336
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 300401334}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &830344245 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8859394007213496476, guid: 1f4185451a950764c89690eb27b765fa,
     type: 3}
   m_PrefabInstance: {fileID: 59239321}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &914197650 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1012918157, guid: 6d708bf50fe6e164fa7e0670f2db6da4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1315164625}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daf7b5e7782cab940a0e6fdb3d86a449, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1315164625
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -205,6 +263,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 931932047, guid: 6d708bf50fe6e164fa7e0670f2db6da4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1451900174}
+    - target: {fileID: 1842095650, guid: 6d708bf50fe6e164fa7e0670f2db6da4, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5853460699076389916, guid: 6d708bf50fe6e164fa7e0670f2db6da4,
         type: 3}
       propertyPath: m_Pivot.x
@@ -432,6 +498,18 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
+--- !u!114 &1451900174 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1124291996, guid: 1f4185451a950764c89690eb27b765fa,
+    type: 3}
+  m_PrefabInstance: {fileID: 59239321}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebd2ac82b9d562e46852b90631268ca9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1823647861
 GameObject:
   m_ObjectHideFlags: 0
@@ -492,7 +570,7 @@ MonoBehaviour:
   OnTargetFound:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 914197650}
         m_TargetAssemblyTypeName: DetectionImageUI, Assembly-CSharp
         m_MethodName: ChangeDetectionStatus
         m_Mode: 6
@@ -507,7 +585,7 @@ MonoBehaviour:
   OnTargetLost:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 914197650}
         m_TargetAssemblyTypeName: DetectionImageUI, Assembly-CSharp
         m_MethodName: ChangeDetectionStatus
         m_Mode: 6
@@ -531,7 +609,7 @@ MonoBehaviour:
   m_Script: {fileID: -1631628248, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PreviewVisible: 1
+  PreviewVisible: 0
   RuntimeOcclusion: 0
   mTrackableName: SolarSystem
   mInitializedInEditor: 1

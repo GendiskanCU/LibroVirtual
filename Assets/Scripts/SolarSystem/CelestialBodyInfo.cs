@@ -57,14 +57,15 @@ public class CelestialBodyInfo : MonoBehaviour
     private int score = 0;
     public int Score => score;
 
-    private GameObject informationCanvas, informationPanel;
-    private Image bodyImage;     
-    private TextMeshProUGUI nameText, descriptionText, massText, densityText,
-    gravityText, distanceText, dayText, yearText;
+    
+    //Canvas que mostrará la información del cuerpo celestial
+    private CanvasSolarSystem informationCanvas;
+    
 
 
     private void Start()
     {
+        /*Opción utilizando un canvas hijo del objeto, de tipo Word Space (mirar el prefab MiniSolarSystem)
         if(transform.childCount > 0)
         {
             informationCanvas = transform.GetChild(0).gameObject;
@@ -76,20 +77,18 @@ public class CelestialBodyInfo : MonoBehaviour
             } 
 
                      
-        }        
+        }*/
+
+        informationCanvas = GameObject.FindObjectOfType<CanvasSolarSystem>();
+        
     }
 
 
+    /// <summary>
+    /// Envía la información a mostrar en la UI
+    /// </summary>
     public void ShowBodyInfo()
     {
-        if(type != TypeOfCelestialBody.Otro)
-        {
-            informationCanvas.SetActive(true);        
-            
-        }
-        else
-        {
-            
-        }
+        informationCanvas.ShowCelestialBodyInfo(this);
     }
 }
