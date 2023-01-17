@@ -1,5 +1,5 @@
 //Controla las acciones a realizar cuando el usuario toque
-//la pantalla del dispositivo sobre algún elemento de la escena
+//la pantalla del dispositivo sobre algï¿½n elemento de la escena
 
 using System.Collections;
 using System.Collections.Generic;
@@ -7,22 +7,39 @@ using UnityEngine;
 
 public class InputTouchController : MonoBehaviour
 {
-    public GameObject particleSystemTest;
+    //public GameObject particleSystemTest;
+    private AudioSource _audioSource;
+
+    private void Start() {
+        _audioSource = GetComponent<AudioSource>();
+    }
 
     private void Update()
     {
+        /*for(int i = 0; i < Input.touchCount; ++i)
+        {
+            if(Input.GetTouch(i).phase == TouchPhase.Began)
+            {
+                Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(i).position);
+                if(Physics.Raycast(ray))
+                {
+                    _audioSource.Play();
+                }
+            }
+        }*/
+
+        
         foreach(var touch in Input.touches)
         {
             if(touch.phase == TouchPhase.Began)
-            {
-                Debug.Log("Se ha pulsado la pantalla");
+            {                
                 var ray = Camera.main.ScreenPointToRay(touch.position);
                 if(Physics.Raycast(ray))
                 {
-                    Debug.Log("Se ha tocado la pantalla sobre un objeto");
-                    Instantiate(particleSystemTest, transform.position, transform.rotation);                    
+                    _audioSource.Play();_audioSource.Play();
+                    //Instantiate(particleSystemTest, transform.position, transform.rotation);                    
                 }
             }
-        }
+        } 
     }
 }
