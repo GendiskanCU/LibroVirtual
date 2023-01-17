@@ -555,8 +555,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 765e5b7fc0669514fad6cbfc0a9d19a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particleSystemTest: {fileID: 1100507635810511045, guid: 6547632e809df284792df3c0bcfe4372,
-    type: 3}
 --- !u!1001 &4037936926624243756
 PrefabInstance:
   m_ObjectHideFlags: 0

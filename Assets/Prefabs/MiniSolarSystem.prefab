@@ -1190,10 +1190,10 @@ MonoBehaviour:
   description: "El Sol \u200B es una estrella de tipo-G de la secuencia principal
     y clase de luminosidad V que se encuentra en el centro del sistema solar y constituye
     la mayor fuente de radiaci\xF3n electromagn\xE9tica de este sistema planetario."
-  gravity: 
-  sunDistance: 
-  mass: 
-  density: 
+  gravity: 274
+  sunDistance: 0
+  mass: "1,989 \xD7 10^30"
+  density: 1,41
   dayLenght: 
   yearLenght: 
   spriteUI: {fileID: 0}
@@ -1440,14 +1440,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 2
   bodyName: Luna
-  description: 
-  gravity: 
-  sunDistance: 
-  mass: 
-  density: 
-  dayLenght: 
+  description: "La Luna es el \xFAnico sat\xE9lite natural de la Tierra. Con un di\xE1metro
+    ecuatorial de 3474.8\_km, es el quinto sat\xE9lite m\xE1s grande del sistema
+    solar, mientras que en cuanto al tama\xF1o proporcional respecto a su planeta
+    es el sat\xE9lite m\xE1s grande: un cuarto del di\xE1metro de la Tierra y 1/81
+    de su masa. Es, adem\xE1s, despu\xE9s de \xCDo, el segundo sat\xE9lite m\xE1s
+    denso. Se encuentra en relaci\xF3n s\xEDncrona con la Tierra, siempre mostrando
+    la misma cara hacia el planeta. El hemisferio visible est\xE1 marcado con oscuros
+    mares lunares de origen volc\xE1nico entre las brillantes monta\xF1as antiguas
+    y los destacados astroblemas.  A pesar de ser, en apariencia, el objeto m\xE1s
+    brillante en el cielo despu\xE9s del Sol, su superficie es en realidad muy oscura,
+    con una reflexi\xF3n similar a la del carb\xF3n. Su prominencia en el cielo y
+    su ciclo regular de fases han hecho de la Luna un objeto con importante influencia
+    cultural desde la antig\xFCedad, tanto en el lenguaje como en el calendario,
+    el arte o la mitolog\xEDa. La influencia gravitatoria de la Luna produce las
+    mareas y el aumento de la duraci\xF3n del d\xEDa. La distancia orbital de la
+    Luna, cerca de treinta veces el di\xE1metro de la Tierra, hace que se vea en
+    el cielo con el mismo tama\xF1o que el Sol y permite que la Luna cubra exactamente
+    al Sol en los eclipses solares totales. "
+  gravity: 1,62
+  sunDistance: 152.000.000
+  mass: 7,349 * 10^22
+  density: 3,34
+  dayLenght: "27,32 d\xEDas terrestres"
   yearLenght: 
-  spriteUI: {fileID: 0}
+  spriteUI: {fileID: 21300000, guid: 9e18dd8bcbdf64e8b9a571f7af79eb3b, type: 3}
   score: 0
 --- !u!1001 &7734698635041202644
 PrefabInstance:

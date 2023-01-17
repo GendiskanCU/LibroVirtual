@@ -6,38 +6,32 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class InputTouchController : MonoBehaviour
-{
-    //public GameObject particleSystemTest;
+{    
     private AudioSource _audioSource;
+
+    //Para guardar el objeto sobre el que impacte el rayo
+    private RaycastHit hit;
 
     private void Start() {
         _audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
-    {
-        /*for(int i = 0; i < Input.touchCount; ++i)
-        {
-            if(Input.GetTouch(i).phase == TouchPhase.Began)
-            {
-                Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(i).position);
-                if(Physics.Raycast(ray))
-                {
-                    _audioSource.Play();
-                }
-            }
-        }*/
-
-        
+    {    
         foreach(var touch in Input.touches)
         {
             if(touch.phase == TouchPhase.Began)
             {                
                 var ray = Camera.main.ScreenPointToRay(touch.position);
-                if(Physics.Raycast(ray))
+                if(Physics.Raycast(ray, out hit))
                 {
-                    _audioSource.Play();_audioSource.Play();
-                    //Instantiate(particleSystemTest, transform.position, transform.rotation);                    
+                    if(hit.transform.GetComponent<CelestialBodyInfo>() != null)
+                    {
+                        CelestialBodyInfo celestialBody = hit.transform.GetComponent<CelestialBodyInfo>();
+                        celestialBody.ShowBodyInfo();                      
+                        
+                        _audioSource.Play(); _audioSource.Play();
+                    }                                      
                 }
             }
         } 
