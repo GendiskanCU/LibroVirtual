@@ -1191,7 +1191,7 @@ MonoBehaviour:
     y clase de luminosidad V que se encuentra en el centro del sistema solar y constituye
     la mayor fuente de radiaci\xF3n electromagn\xE9tica de este sistema planetario."
   gravity: 274
-  sunDistance: 0
+  sunDistance: 
   mass: "1,989 \xD7 10^30"
   density: 1,41
   dayLenght: 
@@ -1463,7 +1463,7 @@ MonoBehaviour:
   mass: 7,349 * 10^22
   density: 3,34
   dayLenght: "27,32 d\xEDas terrestres"
-  yearLenght: 
+  yearLenght: "365 d\xEDas terrestres"
   spriteUI: {fileID: 21300000, guid: 9e18dd8bcbdf64e8b9a571f7af79eb3b, type: 3}
   score: 0
 --- !u!1001 &7734698635041202644

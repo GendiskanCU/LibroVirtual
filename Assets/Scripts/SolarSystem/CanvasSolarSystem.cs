@@ -1,4 +1,4 @@
-//Controla la informaciÛn que se mostrar· en la UI principal
+//Controla la informaciÔøΩn que se mostrarÔøΩ en la UI principal
 
 using System.Collections;
 using System.Collections.Generic;
@@ -9,7 +9,7 @@ using TMPro;
 public class CanvasSolarSystem : MonoBehaviour
 {
     [SerializeField]
-    [Tooltip("Panel de informaciÛn de los cuerpos celestiales")]
+    [Tooltip("Panel de informaciÔøΩn de los cuerpos celestiales")]
     private GameObject BodyInformation;
 
     [SerializeField]
@@ -33,11 +33,11 @@ public class CanvasSolarSystem : MonoBehaviour
     private TextMeshProUGUI gravityText;
 
     [SerializeField]
-    [Tooltip("Campo de texto para la duraciÛn de un dÌa del cuerpo celestial")]
+    [Tooltip("Campo de texto para la duraciÔøΩn de un dÔøΩa del cuerpo celestial")]
     private TextMeshProUGUI dayText;
 
     [SerializeField]
-    [Tooltip("Campo de texto para la duraciÛn de un aÒo del cuerpo celestial")]
+    [Tooltip("Campo de texto para la duraciÔøΩn de un aÔøΩo del cuerpo celestial")]
     private TextMeshProUGUI yearText;
 
     [SerializeField]
@@ -45,10 +45,10 @@ public class CanvasSolarSystem : MonoBehaviour
     private TextMeshProUGUI distanceText;
 
     [SerializeField]
-    [Tooltip("Campo de texto para la descripciÛn del cuerpo celestial")]
+    [Tooltip("Campo de texto para la descripciÔøΩn del cuerpo celestial")]
     private TextMeshProUGUI descriptionText;
 
-    //Para controlar si ya se est· mostrando la informaciÛn de un cuerpo celestial
+    //Para controlar si ya se estÔøΩ mostrando la informaciÔøΩn de un cuerpo celestial
     private bool isShowing;
 
 
@@ -60,21 +60,21 @@ public class CanvasSolarSystem : MonoBehaviour
 
 
     /// <summary>
-    /// Muestra la informaciÛn de un cuerpo celestial en la UI si no se est· ya mostrando alguna
+    /// Muestra la informaciÔøΩn de un cuerpo celestial en la UI si no se estÔøΩ ya mostrando alguna
     /// </summary>
     /// <param name="celestialBody"></param>
     public void ShowCelestialBodyInfo(CelestialBodyInfo celestialBody)
     {
-        if (!isShowing)//Evita que se muestre nueva informaciÛn hasta que no se haya cerrado la actual
+        if (!isShowing)//Evita que se muestre nueva informaciÔøΩn hasta que no se haya cerrado la actual
         {
             nameText.text = string.Format("{0}\n({1})", celestialBody.Name, celestialBody.Type);
             bodyImage.sprite = celestialBody.SpriteUI;
-            massText.text = string.Format("{0} Kgs.", celestialBody.Mass);
-            densityText.text = string.Format("{0} grs/cm3.", celestialBody.Density);
-            gravityText.text = string.Format("{0} m/s2.", celestialBody.Gravity);
-            dayText.text = celestialBody.DayLenght;
-            yearText.text = celestialBody.YearLenght;
-            distanceText.text = string.Format("{0} millones de Kms.", celestialBody.SunDistance);
+            massText.text = string.Format("MASA: {0} Kgs.", celestialBody.Mass);
+            densityText.text = string.Format("DENSIDAD: {0} grs/cm3.", celestialBody.Density);
+            gravityText.text = string.Format("GRAVEDAD: {0} m/s2.", celestialBody.Gravity);
+            dayText.text = string.Format("DURACI√ìN DE UN D√çA: {0}", celestialBody.DayLenght);
+            yearText.text = string.Format("DURACI√ìN DE UN A√ëO: {0}", celestialBody.YearLenght);
+            distanceText.text = string.Format("DISTANCIA AL SOL: {0} millones de Kms.", celestialBody.SunDistance);
             descriptionText.text = celestialBody.Description;
 
             BodyInformation.gameObject.SetActive(true);
