@@ -1,0 +1,161 @@
+[
+	{
+		"Id": "Sun",
+		"Name": "El Sol",
+		"Type": "Estrella",
+		"Description": "El Sol ​ es una estrella de tipo-G de la secuencia principal y clase de luminosidad V que se encuentra en el centro del sistema solar y constituye la mayor fuente de radiación electromagnética de este sistema planetario.",
+		"Gravity": "274",
+		"SunDistance": "",
+		"Mass": "1,989 x 10^30",
+		"Density": "1,41",
+		"DayLenght": "",
+		"YearLenght": "",		
+		"Sprite": "",
+		"LeadTime": "",
+		"Score": "0"
+	},
+
+	{
+		"Id": "Earth",
+		"Name": "La Tierra",
+		"Type": "Planeta",
+		"Description": "Nuestro hogar, la Tierra, es el quinto planeta más grande y el tercero en cercanía al Sol del sistema solar. Entre otras cualidades como la rotación de su eje respecto a la elíptica, la composición de su atmósfera rica en oxígeno o la presencia de agua líquida, esta distancia de la Tierra al Sol -situada dentro de la zona de habitabilidad de una estrella- es la responsable de que nuestro planeta sea el único del sistema solar en el que hasta el momento se haya encontrado vida.",
+		"Gravity": "9,8",
+		"SunDistance": "149.598.262",
+		"Mass": "641.693 x 10^18",
+		"Density": "5,513",
+		"DayLenght": "24 horas",
+		"YearLenght": "365 días, 6 horas y 9,76 minutos",		
+		"Sprite": "",
+		"LeadTime": "2",
+		"Score": "0"
+	},
+
+	{
+		"Id": "Saturn",
+		"Name": "Saturno",
+		"Type": "Planeta",
+		"Description": "Saturno es el sexto planeta en distancia al sol del sistema solar. También se trata del segundo planeta más grande (9 planetas Tierra en fila cabrían a lo largo de la línea de su ecuador) y el otro de los gigantes gaseosos de nuestro vecindario cósmico, aunque al igual que sucede con Júpiter, los científicos creen que podría albergar una núcleo sólido en su interior.",
+		"Gravity": "10,4",
+		"SunDistance": "1.426.666.422",
+		"Mass": "568.319 x 10^21",
+		"Density": "0,687",
+		"DayLenght": "10 horas, 34 minutos",
+		"YearLenght": "29 años terrestres",		
+		"Sprite": "",
+		"LeadTime": "5",
+		"Score": "0"
+	},
+	
+	{
+		"Id": "Mars",
+		"Name": "Marte",
+		"Type": "Planeta",
+		"Description": "Marte, también conocido como el planeta Rojo, es el más alejado del Sol de los cuatro planetas rocosos del sistema solar, y el segundo más cercano a la Tierra, aunque cuenta aproximadamente con solo la mitad de su tamaño. Se trata de un planeta sencillo de identificar en el firmamento nocturno debido al brillo rojizo que hace honor a su nombre.",
+		"Gravity": "3,71",
+		"SunDistance": "227.943.824",
+		"Mass": "641,693 x 10^18",
+		"Density": "3,934",
+		"DayLenght": "24 horas, 37 minutos",
+		"YearLenght": "687 días terrestres",		
+		"Sprite": "",
+		"LeadTime": "3",
+		"Score": ""
+	},
+
+	{
+		"Id": "Jupiter",
+		"Name": "Júpiter",
+		"Type": "Planeta",
+		"Description": "Júpiter, con más del doble de la masa que el resto de planetas juntos, es el planeta más grande del sistema solar por lo que recibe su nombre del dios entre los dioses del Olimpo, Zeus; Júpiter en la mitología romana.",
+		"Gravity": "24,79",
+		"SunDistance": "778.340.821",
+		"Mass": "1.898.130 x10^21",
+		"Density": "1,326",
+		"DayLenght": "9 horas, 56 minutos",
+		"YearLenght": "12 años terrestres",		
+		"Sprite": "",
+		"LeadTime": "4",
+		"Score": ""
+	},
+
+	{
+		"Id": "Uranus",
+		"Name": "Urano",
+		"Type": "Planeta",
+		"Description": "Urano es el séptimo planeta en distancia al sol, el tercero más grande, el cuarto más masivo y el segundo menos denso del sistema solar. Se trata del primero de los gigantes helados de nuestro sistema planetario y está compuesto por una especie de hielo-fluido de agua, amoníaco y metano. De hecho, el manto helado de Urano no está compuesto de hielo en el sentido convencional, sino que es un fluido caliente y denso formado por agua, amoníaco y otros volátiles.",
+		"Gravity": "8,87",
+		"SunDistance": "2.870.658.186",
+		"Mass": "86.810.300 x 10^18",
+		"Density": "1,270",
+		"DayLenght": "17 horas, 14 minutos",
+		"YearLenght": "84 años terrestres",		
+		"Sprite": "",
+		"LeadTime": "6",
+		"Score": ""
+	},
+
+	{
+		"Id": "Mercury",
+		"Name": "Mercurio",
+		"Type": "Planeta",
+		"Description": "Con un tamaño tan solo un poco mayor al de nuestra luna, es el planeta más pequeño del sistema solar y el más cercano al Sol. Se trata del menor de los planetas rocosos del sistema solar y de manera similar a la Luna, presenta una superficie plagada de cráteres, en parte, debido a la finísima y casi ausente atmósfera (exosfera) que le rodea. Con una velocidad de 170.5030 kilómetros por hora, también se trata del planeta que viaja más rápido a través del espacio -de aquí su nombre- ya que la velocidad de un planeta incrementa con su cercanía a la estrella que orbita.",
+		"Gravity": "3,7",
+		"SunDistance": "57.909.227",
+		"Mass": "330.104 x 10^18",
+		"Density": "5,427",
+		"DayLenght": "58,6 días terrestres",
+		"YearLenght": "87,87 días terrestres",		
+		"Sprite": "",
+		"LeadTime": "0",
+		"Score": ""
+	},
+
+    {
+		"Id": "Venus",
+		"Name": "Venus",
+		"Type": "Planeta",
+		"Description": "Parte de la intensidad del brillo de Venus es debido a la cercanía con la Tierra, ya que se trata del planeta que más próximo se encuentra de nosotros. También es el segundo planeta más cercano al Sol. Se trata de otro de los 4 planetas rocosos del sistema solar y debido a la gran similitud tanto en tamaño como en densidad con nuestro planeta, en ocasiones es denominado como el planeta gemelo de la Tierra.",
+		"Gravity": "8,87",
+		"SunDistance": "108.209.475",
+		"Mass": "4.867.320 x 10^18",
+		"Density": "5,243",
+		"DayLenght": "116 días y 18 horas terrestres",
+		"YearLenght": "225 días terrestres",		
+		"Sprite": "",
+		"LeadTime": "1",
+		"Score": ""
+	},
+
+    {
+		"Id": "Neptune",
+		"Name": "Neptuno",
+		"Type": "Planeta",
+		"Description": "Oscuro, frío y regido por vientos supersónicos, el gigante de hielo Neptuno es el octavo y más distante planeta de nuestro sistema solar. Está tan lejos que es el único de los planetas que no es visible desde la Tierra a simple vista.",
+		"Gravity": "11,15",
+		"SunDistance": "4.498.396.441",
+		"Mass": "102.412 x 10^21",
+		"Density": "1,638",
+		"DayLenght": "16 horas, 6 minutos",
+		"YearLenght": "165 años terrestres",		
+		"Sprite": "",
+		"LeadTime": "7",
+		"Score": ""
+	},
+
+    {
+		"Id": "Moon",
+		"Name": "La Luna",
+		"Type": "Satelite",
+		"Description": "La Luna es el único satélite natural de la Tierra. Con un diámetro ecuatorial de 3474.8 km, es el quinto satélite más grande del sistema solar, mientras que en cuanto al tamaño proporcional respecto a su planeta es el satélite más grande: un cuarto del diámetro de la Tierra y 1/81 de su masa. Es, además, después de Ío, el segundo satélite más denso. Se encuentra en relación síncrona con la Tierra, siempre mostrando la misma cara hacia el planeta. El hemisferio visible está marcado con oscuros mares lunares de origen volcánico entre las brillantes montañas antiguas y los destacados astroblemas.  A pesar de ser, en apariencia, el objeto más brillante en el cielo después del Sol, su superficie es en realidad muy oscura, con una reflexión similar a la del carbón. Su prominencia en el cielo y su ciclo regular de fases han hecho de la Luna un objeto con importante influencia cultural desde la antigüedad, tanto en el lenguaje como en el calendario, el arte o la mitología. La influencia gravitatoria de la Luna produce las mareas y el aumento de la duración del día. La distancia orbital de la Luna, cerca de treinta veces el diámetro de la Tierra, hace que se vea en el cielo con el mismo tamaño que el Sol y permite que la Luna cubra exactamente al Sol en los eclipses solares totales. ",
+		"Gravity": "1,62",
+		"SunDistance": "152.000.000",
+		"Mass": "7,349 x 10^22",
+		"Density": "3,34",
+		"DayLenght": "27,32 días terrestres",
+		"YearLenght": "",		
+		"Sprite": "",
+		"LeadTime": "",
+		"Score": ""
+	}	
+]

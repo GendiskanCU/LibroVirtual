@@ -130,6 +130,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1823647865}
     m_Modifications:
+    - target: {fileID: 1608801313, guid: 1f4185451a950764c89690eb27b765fa, type: 3}
+      propertyPath: description
+      value: "J\xFApiter, con m\xE1s del doble de la masa que el resto de planetas
+        juntos, es el planeta m\xE1s grande del sistema solar por lo que recibe su
+        nombre del dios entre los dioses del Olimpo, Zeus; J\xFApiter en la mitolog\xEDa
+        romana."
+      objectReference: {fileID: 0}
     - target: {fileID: 8859394007213496475, guid: 1f4185451a950764c89690eb27b765fa,
         type: 3}
       propertyPath: m_Name
@@ -222,6 +229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 765e5b7fc0669514fad6cbfc0a9d19a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvasSolarSystem: {fileID: 1315164626}
 --- !u!4 &300401336
 Transform:
   m_ObjectHideFlags: 0
@@ -871,6 +879,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d708bf50fe6e164fa7e0670f2db6da4, type: 3}
+--- !u!114 &1315164626 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 914197655, guid: 6d708bf50fe6e164fa7e0670f2db6da4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1315164625}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe4e312824fd1fb47a8e1b4185c8d91e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1415091176
 GameObject:
   m_ObjectHideFlags: 0

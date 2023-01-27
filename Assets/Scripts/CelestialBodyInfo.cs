@@ -1,4 +1,5 @@
 //Controla la información de un cuerpo celeste
+//Solo se utilizaría en la alternativa con la que se obtienen los datos de los propios objetos
 
 using System.Collections;
 using System.Collections.Generic;
@@ -58,8 +59,9 @@ public class CelestialBodyInfo : MonoBehaviour
     public int Score => score;
 
     
-    //Canvas que mostrará la información del cuerpo celestial
-    private CanvasSolarSystem informationCanvas;
+    /*Alternativa obteniendo los datos de los propios objetos
+    //Canvas que mostrará la información del cuerpo celestial.
+    private CanvasSolarSystem informationCanvas; */
     
 
 
@@ -79,16 +81,19 @@ public class CelestialBodyInfo : MonoBehaviour
                      
         }*/
 
-        informationCanvas = GameObject.FindObjectOfType<CanvasSolarSystem>();
+        /*Alternativa obteniendo los datos de los propios objetos
+        informationCanvas = GameObject.FindObjectOfType<CanvasSolarSystem>(); */
         
     }
 
 
+
+    /*Alternativa obteniendo los datos de los propios objetos
     /// <summary>
     /// Envía la información a mostrar en la UI
     /// </summary>
     public void ShowBodyInfo()
     {
         informationCanvas.ShowCelestialBodyInfo(this);
-    }
+    } */
 }

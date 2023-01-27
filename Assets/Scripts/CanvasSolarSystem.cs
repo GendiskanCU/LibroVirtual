@@ -48,7 +48,7 @@ public class CanvasSolarSystem : MonoBehaviour
     [Tooltip("Campo de texto para la descripci�n del cuerpo celestial")]
     private TextMeshProUGUI descriptionText;
 
-    //Para controlar si ya se est� mostrando la informaci�n de un cuerpo celestial
+    //Para controlar si ya se está mostrando la información de un cuerpo celestial
     private bool isShowing;
 
 
@@ -60,13 +60,14 @@ public class CanvasSolarSystem : MonoBehaviour
 
 
     /// <summary>
-    /// Muestra la informaci�n de un cuerpo celestial en la UI si no se est� ya mostrando alguna
+    /// Muestra la información de un cuerpo celestial en la UI si no se está ya mostrando alguna
     /// </summary>
-    /// <param name="celestialBody"></param>
-    public void ShowCelestialBodyInfo(CelestialBodyInfo celestialBody)
+    /// <param name="celestialBody">Nombre del cuerpo celestial</param>
+    public void ShowCelestialBodyInfo(string celestialBody)
     {
         if (!isShowing)//Evita que se muestre nueva informaci�n hasta que no se haya cerrado la actual
         {
+            /*Alternativa descartada: obteniendo los datos de los propios objetos CelestialBodyInfo
             nameText.text = string.Format("{0}\n({1})", celestialBody.Name, celestialBody.Type);
             bodyImage.sprite = celestialBody.SpriteUI;
             massText.text = string.Format("MASA: {0} Kgs.", celestialBody.Mass);
@@ -75,7 +76,7 @@ public class CanvasSolarSystem : MonoBehaviour
             dayText.text = string.Format("DURACIÓN DE UN DÍA: {0}", celestialBody.DayLenght);
             yearText.text = string.Format("DURACIÓN DE UN AÑO: {0}", celestialBody.YearLenght);
             distanceText.text = string.Format("DISTANCIA AL SOL: {0} millones de Kms.", celestialBody.SunDistance);
-            descriptionText.text = celestialBody.Description;
+            descriptionText.text = celestialBody.Description; */
 
             BodyInformation.gameObject.SetActive(true);
             isShowing = true;
