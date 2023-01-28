@@ -5,9 +5,9 @@ using UnityEngine;
 namespace SolarSystem{
 public class JsonHelper : MonoBehaviour
 {
-    public static T[] GetJsonArray<T>(string json)
+    public static T[] GetJsonArray<T>(string jsonContent)
         {
-            string newJson = "{ \"Array\": " + json + "}";
+            string newJson = "{ \"Array\": " + jsonContent + "}";
             Wrapper<T> wrapper = JsonUtility.FromJson<Wrapper<T>>(newJson);
             return wrapper.Array;
         }

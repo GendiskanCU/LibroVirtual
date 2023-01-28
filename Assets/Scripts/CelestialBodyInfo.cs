@@ -7,6 +7,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+using SolarSystem;
+
 
 public enum TypeOfCelestialBody
 {Estrella, Planeta, Satelite, Otro};
@@ -96,4 +98,22 @@ public class CelestialBodyInfo : MonoBehaviour
     {
         informationCanvas.ShowCelestialBodyInfo(this);
     } */
+
+    //Para testear funcionalidades sin necesidad de compilar a Android
+    private void OnMouseDown() {
+        Debug.Log(this.gameObject.name);
+
+        SolarSystemJSONDataProvider jSONDataProvider = new SolarSystemJSONDataProvider();
+        List<CelestialBody> celestialBodies = jSONDataProvider.GetCelestialBodies();
+
+        CelestialBody celestialBodyFound = celestialBodies.Find(x => x.Id == this.gameObject.name);
+            if (celestialBodyFound != null)
+            {
+                Debug.Log(string.Format("{0} ({1})", celestialBodyFound.Name, celestialBodyFound.Type));
+            }
+            else
+            {
+                Debug.Log("Not found");
+            }
+    }
 }

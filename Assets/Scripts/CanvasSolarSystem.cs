@@ -6,6 +6,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+using SolarSystem;
+
 public class CanvasSolarSystem : MonoBehaviour
 {
     [SerializeField]
@@ -49,13 +51,20 @@ public class CanvasSolarSystem : MonoBehaviour
     private TextMeshProUGUI descriptionText;
 
     //Para controlar si ya se está mostrando la información de un cuerpo celestial
-    private bool isShowing;
+    private bool isShowing = false;
+
+    //Para cargar y almacenar los datos de los cuerpos celestiales desde fichero JSON
+    private SolarSystemJSONDataProvider jSONDataProvider;
+    private List<CelestialBody> celestialBodies = new List<CelestialBody>();
 
 
     private void Start()
     {
         BodyInformation.gameObject.SetActive(false);
         isShowing = false;
+
+        jSONDataProvider = new SolarSystemJSONDataProvider();
+        celestialBodies = jSONDataProvider.GetCelestialBodies();
     }
 
 
@@ -63,7 +72,7 @@ public class CanvasSolarSystem : MonoBehaviour
     /// Muestra la información de un cuerpo celestial en la UI si no se está ya mostrando alguna
     /// </summary>
     /// <param name="celestialBody">Nombre del cuerpo celestial</param>
-    public void ShowCelestialBodyInfo(string celestialBody)
+    public void ShowCelestialBodyInfo(string celestialBodyName)
     {
         if (!isShowing)//Evita que se muestre nueva informaci�n hasta que no se haya cerrado la actual
         {
@@ -78,8 +87,21 @@ public class CanvasSolarSystem : MonoBehaviour
             distanceText.text = string.Format("DISTANCIA AL SOL: {0} millones de Kms.", celestialBody.SunDistance);
             descriptionText.text = celestialBody.Description; */
 
+            //nameText.text = celestialBodyName;
+            //BodyInformation.gameObject.SetActive(true);
+            
+            CelestialBody celestialBodyFound = celestialBodies.Find(x => x.Id == celestialBodyName);
+
+            if(celestialBodyFound == null)
+            {
+                Debug.Log("Not found");
+                return;
+            }
+
+            
+            nameText.text = celestialBodyFound.Name;
             BodyInformation.gameObject.SetActive(true);
-            isShowing = true;
+            isShowing = true;            
         }
     }
 
