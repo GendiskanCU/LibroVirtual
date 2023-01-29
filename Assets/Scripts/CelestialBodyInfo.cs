@@ -104,7 +104,7 @@ public class CelestialBodyInfo : MonoBehaviour
         Debug.Log(this.gameObject.name);
 
         SolarSystemJSONDataProvider jSONDataProvider = new SolarSystemJSONDataProvider();
-        List<CelestialBody> celestialBodies = jSONDataProvider.GetCelestialBodies();
+        List<CelestialBody> celestialBodies = jSONDataProvider.GetCelestialBodies();        
 
         CelestialBody celestialBodyFound = celestialBodies.Find(x => x.Id == this.gameObject.name);
             if (celestialBodyFound != null)

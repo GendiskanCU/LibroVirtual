@@ -100,6 +100,9 @@ public class CanvasSolarSystem : MonoBehaviour
 
             
             nameText.text = celestialBodyFound.Name;
+
+            bodyImage.sprite = Resources.Load<Sprite>($"Planets/{celestialBodyFound.Sprite}");
+
             BodyInformation.gameObject.SetActive(true);
             isShowing = true;            
         }
