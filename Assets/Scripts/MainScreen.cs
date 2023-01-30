@@ -8,23 +8,32 @@ using SolarSystem;
 public class MainScreen : MonoBehaviour
 {
     TextMeshProUGUI tittleTextEffect;
-
-    TextMeshProUGUI test;
+    
+    [SerializeField]
+    [Tooltip("Campo de texto para mostrar la información de la aplicación")]
+    private TextMeshProUGUI appInfoText;
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        tittleTextEffect = transform.GetChild(1).GetComponent<TextMeshProUGUI>();
-
-        test = transform.GetChild(2).GetComponent<TextMeshProUGUI>();
-
-        SolarSystemJSONDataProvider jSONDataProvider = new SolarSystemJSONDataProvider();
-        test.text = jSONDataProvider.GetMainInformation();
+        tittleTextEffect = transform.GetChild(1).GetComponent<TextMeshProUGUI>();        
+        
     }
 
-    // Update is called once per frame
-    void Update()
+    
+    public void ShowAppCredits()
     {
+        ResetPanels();
         
+        SolarSystemJSONDataProvider jSONDataProvider = new SolarSystemJSONDataProvider();
+        appInfoText.text = jSONDataProvider.GetMainInformation();
+        appInfoText.gameObject.SetActive(true);   
+    }
+
+    private void ResetPanels()
+    {
+        appInfoText.text = "";
+        appInfoText.gameObject.SetActive(false);
     }
 }
