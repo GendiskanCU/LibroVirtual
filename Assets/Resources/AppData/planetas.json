@@ -3,14 +3,14 @@
 		"Id": "Sun",
 		"Name": "El Sol",
 		"Type": "Estrella",
-		"Description": "El Sol ​ es una estrella de tipo-G de la secuencia principal y clase de luminosidad V que se encuentra en el centro del sistema solar y constituye la mayor fuente de radiación electromagnética de este sistema planetario.",
+		"Description": "El Sol es una estrella de tipo-G de la secuencia principal y clase de luminosidad V que se encuentra en el centro del sistema solar y constituye la mayor fuente de radiación electromagnética de este sistema planetario.",
 		"Gravity": "274",
 		"SunDistance": "",
 		"Mass": "1,989 x 10^30",
 		"Density": "1,41",
 		"DayLenght": "",
 		"YearLenght": "",		
-		"Sprite": "",
+		"Sprite": "Sun",
 		"LeadTime": "",
 		"Score": "0"
 	},
@@ -26,7 +26,7 @@
 		"Density": "5,513",
 		"DayLenght": "24 horas",
 		"YearLenght": "365 días, 6 horas y 9,76 minutos",		
-		"Sprite": "",
+		"Sprite": "Earth",
 		"LeadTime": "2",
 		"Score": "0"
 	},
@@ -42,7 +42,7 @@
 		"Density": "0,687",
 		"DayLenght": "10 horas, 34 minutos",
 		"YearLenght": "29 años terrestres",		
-		"Sprite": "",
+		"Sprite": "Saturn_00",
 		"LeadTime": "5",
 		"Score": "0"
 	},
@@ -58,9 +58,9 @@
 		"Density": "3,934",
 		"DayLenght": "24 horas, 37 minutos",
 		"YearLenght": "687 días terrestres",		
-		"Sprite": "",
+		"Sprite": "Mars",
 		"LeadTime": "3",
-		"Score": ""
+		"Score": "0"
 	},
 
 	{
@@ -74,9 +74,9 @@
 		"Density": "1,326",
 		"DayLenght": "9 horas, 56 minutos",
 		"YearLenght": "12 años terrestres",		
-		"Sprite": "",
+		"Sprite": "Jupiter",
 		"LeadTime": "4",
-		"Score": ""
+		"Score": "0"
 	},
 
 	{
@@ -90,9 +90,9 @@
 		"Density": "1,270",
 		"DayLenght": "17 horas, 14 minutos",
 		"YearLenght": "84 años terrestres",		
-		"Sprite": "",
+		"Sprite": "Uranus",
 		"LeadTime": "6",
-		"Score": ""
+		"Score": "0"
 	},
 
 	{
@@ -106,9 +106,9 @@
 		"Density": "5,427",
 		"DayLenght": "58,6 días terrestres",
 		"YearLenght": "87,87 días terrestres",		
-		"Sprite": "",
+		"Sprite": "Mercury",
 		"LeadTime": "0",
-		"Score": ""
+		"Score": "0"
 	},
 
     {
@@ -122,9 +122,9 @@
 		"Density": "5,243",
 		"DayLenght": "116 días y 18 horas terrestres",
 		"YearLenght": "225 días terrestres",		
-		"Sprite": "",
+		"Sprite": "Venus",
 		"LeadTime": "1",
-		"Score": ""
+		"Score": "0"
 	},
 
     {
@@ -138,9 +138,9 @@
 		"Density": "1,638",
 		"DayLenght": "16 horas, 6 minutos",
 		"YearLenght": "165 años terrestres",		
-		"Sprite": "",
+		"Sprite": "Neptune",
 		"LeadTime": "7",
-		"Score": ""
+		"Score": "0"
 	},
 
     {
@@ -154,8 +154,8 @@
 		"Density": "3,34",
 		"DayLenght": "27,32 días terrestres",
 		"YearLenght": "",		
-		"Sprite": "",
+		"Sprite": "Moon",
 		"LeadTime": "",
-		"Score": ""
+		"Score": "0"
 	}	
 ]

@@ -620,7 +620,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   bodyName: "J\xFApiter"
-  description: "\xFApiter, con m\xE1s del doble de la masa que el resto de planetas
+  description: "J\xFApiter, con m\xE1s del doble de la masa que el resto de planetas
     juntos, es el planeta m\xE1s grande del sistema solar por lo que recibe su nombre
     del dios entre los dioses del Olimpo, Zeus; J\xFApiter en la mitolog\xEDa romana."
   gravity: 24,79

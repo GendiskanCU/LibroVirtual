@@ -100,8 +100,14 @@ public class CanvasSolarSystem : MonoBehaviour
 
             
             nameText.text = celestialBodyFound.Name;
-
             bodyImage.sprite = Resources.Load<Sprite>($"Planets/{celestialBodyFound.Sprite}");
+            massText.text = string.Format("MASA: {0} Kgs.", celestialBodyFound.Mass);
+            densityText.text = string.Format("DENSIDAD: {0} grs/cm3.", celestialBodyFound.Density);
+            gravityText.text = string.Format("GRAVEDAD: {0} m/s2.", celestialBodyFound.Gravity);
+            dayText.text = string.Format("DURACIÓN DE UN DÍA: {0}", celestialBodyFound.DayLenght);
+            yearText.text = string.Format("DURACIÓN DE UN AÑO: {0}", celestialBodyFound.YearLenght);
+            distanceText.text = string.Format("DISTANCIA AL SOL: {0} millones de Kms.", celestialBodyFound.SunDistance);
+            descriptionText.text = celestialBodyFound.Description;
 
             BodyInformation.gameObject.SetActive(true);
             isShowing = true;            

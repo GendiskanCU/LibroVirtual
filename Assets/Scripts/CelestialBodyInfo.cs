@@ -103,6 +103,7 @@ public class CelestialBodyInfo : MonoBehaviour
     private void OnMouseDown() {
         Debug.Log(this.gameObject.name);
 
+        
         SolarSystemJSONDataProvider jSONDataProvider = new SolarSystemJSONDataProvider();
         List<CelestialBody> celestialBodies = jSONDataProvider.GetCelestialBodies();        
 
@@ -115,5 +116,7 @@ public class CelestialBodyInfo : MonoBehaviour
             {
                 Debug.Log("Not found");
             }
+        
+       
     }
 }
