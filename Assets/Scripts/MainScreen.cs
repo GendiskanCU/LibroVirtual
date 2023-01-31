@@ -7,33 +7,41 @@ using SolarSystem;
 
 public class MainScreen : MonoBehaviour
 {
-    TextMeshProUGUI tittleTextEffect;
     
     [SerializeField]
     [Tooltip("Campo de texto para mostrar la información de la aplicación")]
     private TextMeshProUGUI appInfoText;
+
+    private GameObject mainScreenVideoPlayer;
     
 
     // Start is called before the first frame update
     void Start()
-    {
-        tittleTextEffect = transform.GetChild(1).GetComponent<TextMeshProUGUI>();        
-        
+    {        
+        mainScreenVideoPlayer = GameObject.Find("MainScreenVideoPlayer");
     }
+
 
     
     public void ShowAppCredits()
     {
-        ResetPanels();
-        
+        ResetInfo();
+
         SolarSystemJSONDataProvider jSONDataProvider = new SolarSystemJSONDataProvider();
         appInfoText.text = jSONDataProvider.GetMainInformation();
         appInfoText.gameObject.SetActive(true);   
     }
 
-    private void ResetPanels()
+    private void ResetInfo()
     {
         appInfoText.text = "";
         appInfoText.gameObject.SetActive(false);
+    }
+
+    public void StartApp()
+    {        
+        ResetInfo();
+        mainScreenVideoPlayer.SetActive(false);
+        this.gameObject.SetActive(false);
     }
 }
