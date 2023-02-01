@@ -1,4 +1,4 @@
-//Controla la informaci�n que se mostrar� en la UI principal
+//Controla la interfaz e información que se mostrarán en la UI principal
 
 using System.Collections;
 using System.Collections.Generic;
@@ -11,8 +11,8 @@ using SolarSystem;
 public class CanvasSolarSystem : MonoBehaviour
 {
     [SerializeField]
-    [Tooltip("Panel de informaci�n de los cuerpos celestiales")]
-    private GameObject BodyInformation;
+    [Tooltip("Panel de información de los cuerpos celestiales")]
+    private GameObject panelBodyInformation;
 
     [SerializeField]
     [Tooltip("Campo de texto para el nombre y tipo del cuerpo celestial")]
@@ -35,11 +35,11 @@ public class CanvasSolarSystem : MonoBehaviour
     private TextMeshProUGUI gravityText;
 
     [SerializeField]
-    [Tooltip("Campo de texto para la duraci�n de un d�a del cuerpo celestial")]
+    [Tooltip("Campo de texto para la duración de un día del cuerpo celestial")]
     private TextMeshProUGUI dayText;
 
     [SerializeField]
-    [Tooltip("Campo de texto para la duraci�n de un a�o del cuerpo celestial")]
+    [Tooltip("Campo de texto para la duración de un año del cuerpo celestial")]
     private TextMeshProUGUI yearText;
 
     [SerializeField]
@@ -47,21 +47,33 @@ public class CanvasSolarSystem : MonoBehaviour
     private TextMeshProUGUI distanceText;
 
     [SerializeField]
-    [Tooltip("Campo de texto para la descripci�n del cuerpo celestial")]
+    [Tooltip("Campo de texto para la descripción del cuerpo celestial")]
     private TextMeshProUGUI descriptionText;
 
-    //Para controlar si ya se está mostrando la información de un cuerpo celestial
-    private bool isShowing = false;
+    [SerializeField]
+    [Tooltip("Panel de botones de interacción")]
+    private GameObject panelAppButtons;
 
-    //Para cargar y almacenar los datos de los cuerpos celestiales desde fichero JSON
+    [SerializeField]
+    [Tooltip("Panel de inicio")]
+    private GameObject mainScreen;
+
+    [SerializeField]
+    [Tooltip("Botón que activa el panel de botones de interacción")]
+    private GameObject activatePanelButton;
+
+    //Para controlar cuándo se está mostrando el panel de información de un cuerpo celestial
+    private bool panelInfoIsShowing = false;
+
+    //Para cargar y almacenar los datos de los cuerpos celestiales desde un fichero JSON
     private SolarSystemJSONDataProvider jSONDataProvider;
     private List<CelestialBody> celestialBodies = new List<CelestialBody>();
 
 
     private void Start()
     {
-        BodyInformation.gameObject.SetActive(false);
-        isShowing = false;
+        panelBodyInformation.gameObject.SetActive(false);
+        panelInfoIsShowing = false;
 
         jSONDataProvider = new SolarSystemJSONDataProvider();
         celestialBodies = jSONDataProvider.GetCelestialBodies();
@@ -69,12 +81,12 @@ public class CanvasSolarSystem : MonoBehaviour
 
 
     /// <summary>
-    /// Muestra la información de un cuerpo celestial en la UI si no se está ya mostrando alguna
+    /// Muestra un panel de información de un cuerpo celestial en la UI
     /// </summary>
     /// <param name="celestialBody">Nombre del cuerpo celestial</param>
     public void ShowCelestialBodyInfo(string celestialBodyName)
     {
-        if (!isShowing)//Evita que se muestre nueva informaci�n hasta que no se haya cerrado la actual
+        if (!panelInfoIsShowing)//Evita que se muestre nueva informaci�n hasta que no se haya cerrado la actual
         {
             /*Alternativa descartada: obteniendo los datos de los propios objetos CelestialBodyInfo
             nameText.text = string.Format("{0}\n({1})", celestialBody.Name, celestialBody.Type);
@@ -88,13 +100,13 @@ public class CanvasSolarSystem : MonoBehaviour
             descriptionText.text = celestialBody.Description; */
 
             //nameText.text = celestialBodyName;
-            //BodyInformation.gameObject.SetActive(true);
+            //panelBodyInformation.gameObject.SetActive(true);
             
             CelestialBody celestialBodyFound = celestialBodies.Find(x => x.Id == celestialBodyName);
 
             if(celestialBodyFound == null)
             {
-                Debug.Log("Not found");
+                Debug.LogError("Celestial body not found");
                 return;
             }
 
@@ -109,11 +121,12 @@ public class CanvasSolarSystem : MonoBehaviour
             distanceText.text = string.Format("DISTANCIA AL SOL: {0} millones de Kms.", celestialBodyFound.SunDistance);
             descriptionText.text = celestialBodyFound.Description;
 
-            BodyInformation.gameObject.SetActive(true);
-            isShowing = true;            
+            panelBodyInformation.gameObject.SetActive(true);
+            panelInfoIsShowing = true;            
         }
     }
 
+    //Reinicia y desactiva el panel de información de un cuerpo celestial
     public void HideCelestialBodyInfo()
     {
         nameText.text = "";
@@ -126,8 +139,29 @@ public class CanvasSolarSystem : MonoBehaviour
         distanceText.text = "";
         descriptionText.text = "";
 
-        BodyInformation.gameObject.SetActive(false);
-        isShowing = false;
+        panelBodyInformation.gameObject.SetActive(false);
+        panelInfoIsShowing = false;
+    }
+
+    //Activa el panel de botones de interacción de la UI
+    public void ActivatePanelAppButtons()
+    {
+        panelAppButtons.SetActive(true);
+        activatePanelButton.SetActive(false);
+    }
+
+    //Desactiva el panel de botones de interacción de la UI
+    public void DeactivatePanelAppButtons()
+    {
+        panelAppButtons.SetActive(false);
+        activatePanelButton.SetActive(true);
+    }
+
+    public void ReturnToMainScreen()
+    {
+        HideCelestialBodyInfo();
+        DeactivatePanelAppButtons();
+        mainScreen.SetActive(true);        
     }
 
 }

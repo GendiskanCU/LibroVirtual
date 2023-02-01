@@ -12,6 +12,7 @@ public class MainScreen : MonoBehaviour
     [Tooltip("Campo de texto para mostrar la información de la aplicación")]
     private TextMeshProUGUI appInfoText;
 
+    //Vídeo de fondo de la pantalla inicial
     private GameObject mainScreenVideoPlayer;
     
 
@@ -23,6 +24,7 @@ public class MainScreen : MonoBehaviour
 
 
     
+    //Muestra el panel de información de la aplicación
     public void ShowAppCredits()
     {
         ResetInfo();
@@ -32,16 +34,28 @@ public class MainScreen : MonoBehaviour
         appInfoText.gameObject.SetActive(true);   
     }
 
+    //Vacía y desactiva los paneles informativos
     private void ResetInfo()
     {
         appInfoText.text = "";
         appInfoText.gameObject.SetActive(false);
     }
 
+    //Da comienzo a la experiencia de AR
     public void StartApp()
     {        
         ResetInfo();
         mainScreenVideoPlayer.SetActive(false);
-        this.gameObject.SetActive(false);
+        this.gameObject.SetActive(false);        
+    }
+
+    public void ExitApp()
+    {
+        Application.Quit();
+    }
+
+    private void OnEnable()
+    {
+        mainScreenVideoPlayer.SetActive(true);    
     }
 }
