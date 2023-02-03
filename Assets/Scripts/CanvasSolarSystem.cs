@@ -11,6 +11,10 @@ using SolarSystem;
 public class CanvasSolarSystem : MonoBehaviour
 {
     [SerializeField]
+    [Tooltip("Objeto que alberga el sistema solar")]
+    private GameObject theSolarSystem;
+
+    [SerializeField]
     [Tooltip("Panel de información de los cuerpos celestiales")]
     private GameObject panelBodyInformation;
 
@@ -62,12 +66,32 @@ public class CanvasSolarSystem : MonoBehaviour
     [Tooltip("Botón que activa el panel de botones de interacción")]
     private GameObject activatePanelButton;
 
+    [SerializeField]
+    [Tooltip("Botón que activa/desactiva el tiempo acelerado")]
+    private GameObject acceleratedSpeedButton;
+
+    [SerializeField]
+    [Tooltip("Botón que activa/desactiva el tiempo reducido")]
+    private GameObject reducedSpeedButton;
+
+    [SerializeField]
+    [Tooltip("Botón que activa/desactiva silenciar sonido")]
+    private GameObject soundButton;
+
     //Para controlar cuándo se está mostrando el panel de información de un cuerpo celestial
     private bool panelInfoIsShowing = false;
 
     //Para cargar y almacenar los datos de los cuerpos celestiales desde un fichero JSON
     private SolarSystemJSONDataProvider jSONDataProvider;
     private List<CelestialBody> celestialBodies = new List<CelestialBody>();
+
+    //Para controlar si el usuario ha rotado el sistema solar para adaptarlo a un target en horizontal
+    private bool solarSystemRotated;
+
+    //Para controlar la escala de tiempo
+    private float normalTimeScale = 1.0f;
+    private float acceleratedTimeScale = 4.0f;
+    private float reducedTimeScale = 0.1f;
 
 
     private void Start()
@@ -157,8 +181,63 @@ public class CanvasSolarSystem : MonoBehaviour
         activatePanelButton.SetActive(true);
     }
 
+    public void ActivateDeactivateAcceleratedSpeed()
+    {
+        if(Time.timeScale != acceleratedTimeScale)
+        {
+            Time.timeScale = acceleratedTimeScale;
+            acceleratedSpeedButton.GetComponent<Image>().color = Color.red;
+            reducedSpeedButton.GetComponent<Image>().color = Color.white;
+        }
+        else
+        {
+            ActivateNormalSpeed();
+        }
+    }
+
+    public void ActivateDeactivateReducedSpeed()
+    {
+        if(Time.timeScale != reducedTimeScale)
+        {
+            Time.timeScale = reducedTimeScale;
+            acceleratedSpeedButton.GetComponent<Image>().color = Color.white;
+            reducedSpeedButton.GetComponent<Image>().color = Color.red;
+        }
+        else
+        {
+            ActivateNormalSpeed();
+        }            
+    }
+
+    private void ActivateNormalSpeed()
+    {        
+        Time.timeScale = normalTimeScale;
+        acceleratedSpeedButton.GetComponent<Image>().color = Color.white;
+        reducedSpeedButton.GetComponent<Image>().color = Color.white;
+    }    
+
+    public void RotateSolarSystem()
+    {
+        if(solarSystemRotated)
+        {
+            theSolarSystem.transform.localRotation = Quaternion.Euler(90f, theSolarSystem.transform.localRotation.y,
+            theSolarSystem.transform.localRotation.z);
+        }
+        else
+        {
+            theSolarSystem.transform.localRotation = Quaternion.Euler(0f, theSolarSystem.transform.localRotation.y,
+            theSolarSystem.transform.localRotation.z);
+        }
+
+        solarSystemRotated = !solarSystemRotated;
+    }
+
     public void ReturnToMainScreen()
     {
+        if(Time.timeScale != normalTimeScale)
+        {
+            ActivateNormalSpeed();
+        }
         HideCelestialBodyInfo();
         DeactivatePanelAppButtons();
         mainScreen.SetActive(true);        

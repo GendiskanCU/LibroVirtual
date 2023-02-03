@@ -2771,7 +2771,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -92.552246}
-  m_SizeDelta: {x: 667.9726, y: 0}
+  m_SizeDelta: {x: 667.9726, y: 1509.28}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &1842095652
 CanvasRenderer:
@@ -4846,7 +4846,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe4e312824fd1fb47a8e1b4185c8d91e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelBodyInformation: {fileID: 0}
+  panelBodyInformation: {fileID: 94662127}
   nameText: {fileID: 5853460698697627543}
   bodyImage: {fileID: 5853460700323454988}
   massText: {fileID: 7235485139842308856}
@@ -4857,6 +4857,7 @@ MonoBehaviour:
   distanceText: {fileID: 7980327586767487496}
   descriptionText: {fileID: 1842095651}
   panelAppButtons: {fileID: 1522843202}
+  mainScreen: {fileID: 490598466}
   activatePanelButton: {fileID: 1590812464}
 --- !u!1 &5853460700323454990
 GameObject:
@@ -5737,6 +5738,41 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1522843203}
     m_Modifications:
+    - target: {fileID: 1260479619132467537, guid: 116bc264a2dfc0046a3e5e3849989e69,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1260479619132467537, guid: 116bc264a2dfc0046a3e5e3849989e69,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1260479619132467537, guid: 116bc264a2dfc0046a3e5e3849989e69,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 914197655}
+    - target: {fileID: 1260479619132467537, guid: 116bc264a2dfc0046a3e5e3849989e69,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1260479619132467537, guid: 116bc264a2dfc0046a3e5e3849989e69,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ReturnToMainScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 1260479619132467537, guid: 116bc264a2dfc0046a3e5e3849989e69,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CanvasSolarSystem, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1260479619132467537, guid: 116bc264a2dfc0046a3e5e3849989e69,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1260479619132467538, guid: 116bc264a2dfc0046a3e5e3849989e69,
         type: 3}
       propertyPath: m_Pivot.x

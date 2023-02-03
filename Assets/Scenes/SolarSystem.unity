@@ -135,6 +135,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MiniSolarSystem
       objectReference: {fileID: 0}
+    - target: {fileID: 8859394007213496475, guid: 1f4185451a950764c89690eb27b765fa,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8859394007213496476, guid: 1f4185451a950764c89690eb27b765fa,
         type: 3}
       propertyPath: m_RootOrder
@@ -192,12 +197,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f4185451a950764c89690eb27b765fa, type: 3}
---- !u!1 &248294416 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 490598466, guid: 6d708bf50fe6e164fa7e0670f2db6da4,
-    type: 3}
-  m_PrefabInstance: {fileID: 1315164625}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &300401334
 GameObject:
   m_ObjectHideFlags: 0
@@ -340,6 +339,12 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &483349314 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6971120485403507009, guid: 6d708bf50fe6e164fa7e0670f2db6da4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1315164625}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &654283034 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 765274226, guid: 1f4185451a950764c89690eb27b765fa,
@@ -370,6 +375,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daf7b5e7782cab940a0e6fdb3d86a449, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1105211310 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5481811201287477154, guid: 6d708bf50fe6e164fa7e0670f2db6da4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1315164625}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1244446167
 GameObject:
   m_ObjectHideFlags: 0
@@ -463,10 +474,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 94662127, guid: 6d708bf50fe6e164fa7e0670f2db6da4, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 521226864, guid: 6d708bf50fe6e164fa7e0670f2db6da4, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -500,17 +507,29 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 914197655, guid: 6d708bf50fe6e164fa7e0670f2db6da4, type: 3}
-      propertyPath: mainScreen
+      propertyPath: soundButton
       value: 
-      objectReference: {fileID: 248294416}
+      objectReference: {fileID: 1443180375}
     - target: {fileID: 914197655, guid: 6d708bf50fe6e164fa7e0670f2db6da4, type: 3}
-      propertyPath: panelBodyInformation
+      propertyPath: theSolarSystem
       value: 
-      objectReference: {fileID: 1955703505}
+      objectReference: {fileID: 1699452619}
+    - target: {fileID: 914197655, guid: 6d708bf50fe6e164fa7e0670f2db6da4, type: 3}
+      propertyPath: reducedSpeedButton
+      value: 
+      objectReference: {fileID: 1105211310}
+    - target: {fileID: 914197655, guid: 6d708bf50fe6e164fa7e0670f2db6da4, type: 3}
+      propertyPath: acceleratedSpeedButton
+      value: 
+      objectReference: {fileID: 483349314}
     - target: {fileID: 931932047, guid: 6d708bf50fe6e164fa7e0670f2db6da4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 654283034}
+    - target: {fileID: 1018658759, guid: 6d708bf50fe6e164fa7e0670f2db6da4, type: 3}
+      propertyPath: m_text
+      value: Explorar
+      objectReference: {fileID: 0}
     - target: {fileID: 1573610929, guid: 6d708bf50fe6e164fa7e0670f2db6da4, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -527,41 +546,37 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1842095650, guid: 6d708bf50fe6e164fa7e0670f2db6da4, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 1509.28
-      objectReference: {fileID: 0}
-    - target: {fileID: 1260479620749483416, guid: 6d708bf50fe6e164fa7e0670f2db6da4,
+    - target: {fileID: 5481811201287477152, guid: 6d708bf50fe6e164fa7e0670f2db6da4,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1260479620749483416, guid: 6d708bf50fe6e164fa7e0670f2db6da4,
+    - target: {fileID: 5481811201287477152, guid: 6d708bf50fe6e164fa7e0670f2db6da4,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1260479620749483416, guid: 6d708bf50fe6e164fa7e0670f2db6da4,
+    - target: {fileID: 5481811201287477152, guid: 6d708bf50fe6e164fa7e0670f2db6da4,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1315164626}
-    - target: {fileID: 1260479620749483416, guid: 6d708bf50fe6e164fa7e0670f2db6da4,
+    - target: {fileID: 5481811201287477152, guid: 6d708bf50fe6e164fa7e0670f2db6da4,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 1260479620749483416, guid: 6d708bf50fe6e164fa7e0670f2db6da4,
+    - target: {fileID: 5481811201287477152, guid: 6d708bf50fe6e164fa7e0670f2db6da4,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ReturnToMainScreen
+      value: ActivateDeactivateReducedSpeed
       objectReference: {fileID: 0}
-    - target: {fileID: 1260479620749483416, guid: 6d708bf50fe6e164fa7e0670f2db6da4,
+    - target: {fileID: 5481811201287477152, guid: 6d708bf50fe6e164fa7e0670f2db6da4,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: CanvasSolarSystem, Assembly-CSharp
       objectReference: {fileID: 0}
-    - target: {fileID: 1260479620749483416, guid: 6d708bf50fe6e164fa7e0670f2db6da4,
+    - target: {fileID: 5481811201287477152, guid: 6d708bf50fe6e164fa7e0670f2db6da4,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
@@ -675,6 +690,76 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CanvasSolarSystem
+      objectReference: {fileID: 0}
+    - target: {fileID: 6971120485403507023, guid: 6d708bf50fe6e164fa7e0670f2db6da4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6971120485403507023, guid: 6d708bf50fe6e164fa7e0670f2db6da4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6971120485403507023, guid: 6d708bf50fe6e164fa7e0670f2db6da4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1315164626}
+    - target: {fileID: 6971120485403507023, guid: 6d708bf50fe6e164fa7e0670f2db6da4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6971120485403507023, guid: 6d708bf50fe6e164fa7e0670f2db6da4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ActivateDeactivateAcceleratedSpeed
+      objectReference: {fileID: 0}
+    - target: {fileID: 6971120485403507023, guid: 6d708bf50fe6e164fa7e0670f2db6da4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CanvasSolarSystem, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6971120485403507023, guid: 6d708bf50fe6e164fa7e0670f2db6da4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7547239542365409415, guid: 6d708bf50fe6e164fa7e0670f2db6da4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7547239542365409415, guid: 6d708bf50fe6e164fa7e0670f2db6da4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7547239542365409415, guid: 6d708bf50fe6e164fa7e0670f2db6da4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1315164626}
+    - target: {fileID: 7547239542365409415, guid: 6d708bf50fe6e164fa7e0670f2db6da4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7547239542365409415, guid: 6d708bf50fe6e164fa7e0670f2db6da4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RotateSolarSystem
+      objectReference: {fileID: 0}
+    - target: {fileID: 7547239542365409415, guid: 6d708bf50fe6e164fa7e0670f2db6da4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CanvasSolarSystem, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7547239542365409415, guid: 6d708bf50fe6e164fa7e0670f2db6da4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d708bf50fe6e164fa7e0670f2db6da4, type: 3}
@@ -805,6 +890,18 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
+--- !u!1 &1443180375 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5238590259454730943, guid: 6d708bf50fe6e164fa7e0670f2db6da4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1315164625}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1699452619 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8859394007213496475, guid: 1f4185451a950764c89690eb27b765fa,
+    type: 3}
+  m_PrefabInstance: {fileID: 59239321}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1823647861
 GameObject:
   m_ObjectHideFlags: 0
@@ -953,12 +1050,6 @@ MonoBehaviour:
   mCastedBehaviour: {fileID: 1823647864}
   mMeshFilter: {fileID: 0}
   mMeshRenderer: {fileID: 0}
---- !u!1 &1955703505 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 94662127, guid: 6d708bf50fe6e164fa7e0670f2db6da4,
-    type: 3}
-  m_PrefabInstance: {fileID: 1315164625}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1973941622
 GameObject:
   m_ObjectHideFlags: 0
