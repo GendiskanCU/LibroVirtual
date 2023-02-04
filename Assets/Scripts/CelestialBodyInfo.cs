@@ -111,6 +111,7 @@ public class CelestialBodyInfo : MonoBehaviour
             if (celestialBodyFound != null)
             {
                 Debug.Log(string.Format("{0} ({1})", celestialBodyFound.Name, celestialBodyFound.Type));
+                Debug.Log(string.Format("{0}", celestialBodyFound.Description));
             }
             else
             {

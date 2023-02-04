@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -242,7 +242,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 2fbc28ede11fdd14fb9392bebbe996bd, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -501,6 +501,10 @@ MonoBehaviour:
   musicSource: {fileID: 290273123}
   mainMusic: {fileID: 8300000, guid: 2fbc28ede11fdd14fb9392bebbe996bd, type: 3}
   ambientSound: {fileID: 8300000, guid: b082408930933be42b45bf38d6815b86, type: 3}
+  buttonClickSound: {fileID: 8300000, guid: 518d87fe926633a4ea413192ec33e578, type: 3}
+  buttonClickSoundAlt: {fileID: 8300000, guid: 9898540e95f40114cafee6aad3b730e4, type: 3}
+  celestialBodySound: {fileID: 8300000, guid: 0d7bc57286fd78e4c86043f2915a5652, type: 3}
+  showInfoSound: {fileID: 8300000, guid: 1ddc19107fdeed845a8aa3bc0dc65f8a, type: 3}
 --- !u!4 &525177661
 Transform:
   m_ObjectHideFlags: 0
@@ -641,10 +645,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 28794942, guid: 6d708bf50fe6e164fa7e0670f2db6da4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 525177660}
     - target: {fileID: 490598470, guid: 6d708bf50fe6e164fa7e0670f2db6da4, type: 3}
       propertyPath: imageTarget
       value: 
       objectReference: {fileID: 1823647861}
+    - target: {fileID: 490598470, guid: 6d708bf50fe6e164fa7e0670f2db6da4, type: 3}
+      propertyPath: mainScreenVideoPlayer
+      value: 
+      objectReference: {fileID: 1244446167}
     - target: {fileID: 521226864, guid: 6d708bf50fe6e164fa7e0670f2db6da4, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -661,6 +673,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 521226865, guid: 6d708bf50fe6e164fa7e0670f2db6da4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 525177660}
     - target: {fileID: 702547983, guid: 6d708bf50fe6e164fa7e0670f2db6da4, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -677,6 +693,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 702547984, guid: 6d708bf50fe6e164fa7e0670f2db6da4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 525177660}
     - target: {fileID: 914197655, guid: 6d708bf50fe6e164fa7e0670f2db6da4, type: 3}
       propertyPath: imageTarget
       value: 
@@ -689,6 +709,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 654283034}
+    - target: {fileID: 1002423731, guid: 6d708bf50fe6e164fa7e0670f2db6da4, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 525177660}
     - target: {fileID: 1573610929, guid: 6d708bf50fe6e164fa7e0670f2db6da4, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -705,6 +729,34 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1573610930, guid: 6d708bf50fe6e164fa7e0670f2db6da4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 525177660}
+    - target: {fileID: 1590812466, guid: 6d708bf50fe6e164fa7e0670f2db6da4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 525177660}
+    - target: {fileID: 1260479620749483416, guid: 6d708bf50fe6e164fa7e0670f2db6da4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 525177660}
+    - target: {fileID: 5238590258296687750, guid: 6d708bf50fe6e164fa7e0670f2db6da4,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 525177660}
+    - target: {fileID: 5238590258296687750, guid: 6d708bf50fe6e164fa7e0670f2db6da4,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 525177660}
+    - target: {fileID: 5481811201287477152, guid: 6d708bf50fe6e164fa7e0670f2db6da4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 525177660}
     - target: {fileID: 5853460699076389916, guid: 6d708bf50fe6e164fa7e0670f2db6da4,
         type: 3}
       propertyPath: m_Pivot.x
@@ -815,6 +867,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasSolarSystem
       objectReference: {fileID: 0}
+    - target: {fileID: 6971120485403507023, guid: 6d708bf50fe6e164fa7e0670f2db6da4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 525177660}
+    - target: {fileID: 7547239542365409415, guid: 6d708bf50fe6e164fa7e0670f2db6da4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 525177660}
+    - target: {fileID: 7692134561638655780, guid: 6d708bf50fe6e164fa7e0670f2db6da4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 525177660}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d708bf50fe6e164fa7e0670f2db6da4, type: 3}
 --- !u!114 &1315164626 stripped
@@ -989,7 +1056,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.85
   m_Pitch: 1
   Loop: 0
   Mute: 0

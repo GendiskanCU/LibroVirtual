@@ -82,6 +82,10 @@ public class CanvasSolarSystem : MonoBehaviour
     [Tooltip("Botón que activa/desactiva silenciar sonido")]
     private GameObject soundButton;    
 
+     [SerializeField]
+     [Tooltip("Velocidad a la que se irán mostrando la información, en caracteres/segundo")]
+    private int charactersPerSecond = 20;
+
     //Para controlar cuándo se está mostrando el panel de información de un cuerpo celestial
     private bool panelInfoIsShowing = false;
 
@@ -114,7 +118,7 @@ public class CanvasSolarSystem : MonoBehaviour
     /// <param name="celestialBody">Nombre del cuerpo celestial</param>
     public void ShowCelestialBodyInfo(string celestialBodyName)
     {
-        if (!panelInfoIsShowing)//Evita que se muestre nueva informaci�n hasta que no se haya cerrado la actual
+        if (!panelInfoIsShowing)//Evita que se muestre nueva información hasta que no se haya cerrado la actual
         {
             /*Alternativa descartada: obteniendo los datos de los propios objetos CelestialBodyInfo
             nameText.text = string.Format("{0}\n({1})", celestialBody.Name, celestialBody.Type);
@@ -138,7 +142,8 @@ public class CanvasSolarSystem : MonoBehaviour
                 return;
             }
 
-            
+            SoundManager.SharedInstance.PlayCelestialBodyFoundSound();
+                        
             nameText.text = celestialBodyFound.Name;
             bodyImage.sprite = Resources.Load<Sprite>($"Planets/{celestialBodyFound.Sprite}");
             massText.text = string.Format("MASA: {0} Kgs.", celestialBodyFound.Mass);
@@ -150,8 +155,24 @@ public class CanvasSolarSystem : MonoBehaviour
             descriptionText.text = celestialBodyFound.Description;
 
             panelBodyInformation.gameObject.SetActive(true);
-            panelInfoIsShowing = true;            
+            panelInfoIsShowing = true;
+
+            
+            /*Alternativa utilizando una corutina para mostrar el texto carácter a carácter
+            SoundManager.SharedInstance.PlayWritingInfoSound();
+            StartCoroutine(SetInfoText(string.Format("{0}", celestialBodyFound.Description))); */
         }
+    }
+
+    private IEnumerator SetInfoText(string info)
+    {
+        foreach(var character in info)
+        {
+            descriptionText.text += character;
+            yield return new WaitForSeconds(1.0f / (charactersPerSecond / Time.timeScale));
+        }
+
+        SoundManager.SharedInstance.StopAllSFX();
     }
 
     //Reinicia y desactiva el panel de información de un cuerpo celestial

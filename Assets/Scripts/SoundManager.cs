@@ -19,8 +19,31 @@ public class SoundManager : MonoBehaviour
     [Tooltip("Clip de sonido ambiental del sistema solar")]
     private AudioClip ambientSound;
 
+    [SerializeField]
+    [Tooltip("Clip de efecto de sonido al pulsar un botón")]
+    private AudioClip buttonClickSound;
+
+     [SerializeField]
+    [Tooltip("Clip de efecto de sonido alternativo al pulsar un botón")]
+    private AudioClip buttonClickSoundAlt;
+
+    [SerializeField]
+    [Tooltip("Clip de efecto de sonido al descubrir un cuerpo celestial")]
+    private AudioClip celestialBodySound;
+
+    [SerializeField]
+    [Tooltip("Clip de efecto de sonido al mostrar la información de un cuerpo")]
+    private AudioClip showInfoSound;
+
     //Singleton
     public static SoundManager SharedInstance;
+
+    //Para controlar cuándo el sonido está silenciado
+    private bool soundMuted;   
+
+    //Para almacenar el volumen inicial de los sonidos
+    private float initialMusicVolume, initialSFXVolume;
+    
 
     private void Awake() {
         //Singleton permanente entre escenas distintas (si las hubiera)
@@ -33,6 +56,11 @@ public class SoundManager : MonoBehaviour
             SharedInstance = this;
             DontDestroyOnLoad(gameObject);
         }
+    }
+
+    private void Start() {
+        initialMusicVolume = musicSource.volume;
+        initialSFXVolume = effectsSource.volume;        
     }
 
     //Reproduce un efecto de sonido, deteniendo antes el que pudiera estar reproduciéndose ya
@@ -52,6 +80,21 @@ public class SoundManager : MonoBehaviour
         musicSource.Play();
     }
 
+     private void MuteAllSounds()
+    {
+        musicSource.volume = 0;
+        effectsSource.volume = 0;
+        soundMuted = true;
+    }
+
+    private void RestoreAllSounds()
+    {
+        musicSource.volume = initialMusicVolume;
+        effectsSource.volume = initialSFXVolume;
+        soundMuted = false;
+    }
+   
+
     public void PlayMainMusic()
     {
         PlayMusic(mainMusic);
@@ -60,6 +103,45 @@ public class SoundManager : MonoBehaviour
     public void PlayAmbientSound()
     {
         PlayMusic(ambientSound);
+    }
+
+    public void PlayButtonClickSound()
+    {
+        PlaySound(buttonClickSound);
+    }
+
+    public void PlayButtonClickSoundAlt()
+    {
+        PlaySound(buttonClickSoundAlt);
+    }
+
+    public void PlayCelestialBodyFoundSound()
+    {
+        PlaySound(celestialBodySound);
+    }
+
+    public void PlayWritingInfoSound()
+    {
+        effectsSource.PlayOneShot(showInfoSound);
+    }
+
+    public void ChangeVolumeSounds()
+    {
+        if(soundMuted)
+        {
+            Debug.Log("Activando sonidos");
+            RestoreAllSounds();
+        }
+        else
+        {
+            Debug.Log("Silenciando sonidos");
+            MuteAllSounds();
+        }
+    }
+
+    public void StopAllSFX()
+    {
+        effectsSource.Stop();
     }
    
 }
