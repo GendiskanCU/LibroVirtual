@@ -14,13 +14,25 @@ public class DetectionImageUI : MonoBehaviour
     private Color foundColor, lostColor;
 
     
+
+    
     void Start()
     {
         detectionImage.color = lostColor;
     }
 
     public void ChangeDetectionStatus(bool newStatus)
-    {
-        detectionImage.color = newStatus ? foundColor : lostColor;
+    {     
+
+        if(newStatus)
+        {
+            detectionImage.color = foundColor;
+            SoundManager.SharedInstance.PlayAmbientSound();
+        }
+        else
+        {
+            detectionImage.color = lostColor;                             
+        }
+        
     }
 }

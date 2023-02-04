@@ -11,6 +11,10 @@ using SolarSystem;
 public class CanvasSolarSystem : MonoBehaviour
 {
     [SerializeField]
+    [Tooltip("Image Target que activará el sistema solar")]
+    private GameObject imageTarget;
+    
+    [SerializeField]
     [Tooltip("Objeto que alberga el sistema solar")]
     private GameObject theSolarSystem;
 
@@ -76,7 +80,7 @@ public class CanvasSolarSystem : MonoBehaviour
 
     [SerializeField]
     [Tooltip("Botón que activa/desactiva silenciar sonido")]
-    private GameObject soundButton;
+    private GameObject soundButton;    
 
     //Para controlar cuándo se está mostrando el panel de información de un cuerpo celestial
     private bool panelInfoIsShowing = false;
@@ -238,9 +242,12 @@ public class CanvasSolarSystem : MonoBehaviour
         {
             ActivateNormalSpeed();
         }
+        imageTarget.SetActive(false);
         HideCelestialBodyInfo();
-        DeactivatePanelAppButtons();
-        mainScreen.SetActive(true);        
+        DeactivatePanelAppButtons();        
+        mainScreen.SetActive(true);
+
+        SoundManager.SharedInstance.PlayMainMusic();        
     }
 
 }

@@ -7,19 +7,22 @@ using SolarSystem;
 
 public class MainScreen : MonoBehaviour
 {
+    [SerializeField]
+    [Tooltip("Image Target que activará el sistema solar")]
+    private GameObject imageTarget;
     
     [SerializeField]
     [Tooltip("Campo de texto para mostrar la información de la aplicación")]
     private TextMeshProUGUI appInfoText;
 
     //Vídeo de fondo de la pantalla inicial
-    private GameObject mainScreenVideoPlayer;
-    
+    private GameObject mainScreenVideoPlayer;        
 
     // Start is called before the first frame update
     void Start()
     {        
         mainScreenVideoPlayer = GameObject.Find("MainScreenVideoPlayer");
+        SoundManager.SharedInstance.PlayMainMusic();
     }
 
 
@@ -46,7 +49,8 @@ public class MainScreen : MonoBehaviour
     {        
         ResetInfo();
         mainScreenVideoPlayer.SetActive(false);
-        this.gameObject.SetActive(false);        
+        this.gameObject.SetActive(false);
+        imageTarget.SetActive(true);        
     }
 
     public void ExitApp()
