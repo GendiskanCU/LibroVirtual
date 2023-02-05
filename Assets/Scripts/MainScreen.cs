@@ -18,7 +18,10 @@ public class MainScreen : MonoBehaviour
     [SerializeField]
     [Tooltip("Campo de texto para mostrar la información de la aplicación")]
     private TextMeshProUGUI appInfoText;
-    //Vídeo de fondo de la pantalla inicial
+    
+    [SerializeField]
+    [Tooltip("Panel de instrucciones de la aplicación")]
+    private GameObject instructionsPanel;
        
 
     // Start is called before the first frame update
@@ -33,11 +36,12 @@ public class MainScreen : MonoBehaviour
     public void ShowAppCredits()
     {
         ResetInfo();
+        HideAppInstructions();
 
         SolarSystemJSONDataProvider jSONDataProvider = new SolarSystemJSONDataProvider();
         appInfoText.text = jSONDataProvider.GetMainInformation();
         appInfoText.gameObject.SetActive(true);   
-    }
+    }   
 
     //Vacía y desactiva los paneles informativos
     private void ResetInfo()
@@ -46,10 +50,24 @@ public class MainScreen : MonoBehaviour
         appInfoText.gameObject.SetActive(false);
     }
 
+    public void ShowAppInstructions()
+    {
+        ResetInfo();
+        
+        instructionsPanel.SetActive(true);
+    }
+
+    public void HideAppInstructions()
+    {
+        instructionsPanel.SetActive(false);
+    }
+
     //Da comienzo a la experiencia de AR
     public void StartApp()
     {        
         ResetInfo();
+        HideAppInstructions();
+        
         mainScreenVideoPlayer.SetActive(false);
         this.gameObject.SetActive(false);
         imageTarget.SetActive(true);        
