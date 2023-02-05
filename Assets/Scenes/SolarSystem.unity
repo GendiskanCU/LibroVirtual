@@ -1247,13 +1247,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PreviewVisible: 0
   RuntimeOcclusion: 0
-  mTrackableName: SolarSystem
+  mTrackableName: target-solar-system
   mInitializedInEditor: 1
   mDataSetPath: Vuforia/LibroVirtual.xml
-  mAspectRatio: 0.71308
+  mAspectRatio: 1.037412
   mImageTargetType: 0
   mWidth: 1
-  mHeight: 0.71308
+  mHeight: 1.037412
   mRuntimeTexture: {fileID: 0}
   mMotionHint: 1
   mTrackingOptimization: 0
@@ -1289,7 +1289,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mObserverBehaviour: {fileID: 1823647864}
   mHiddenRoot: {fileID: 0}
-  mTargetName: SolarSystem
+  mTargetName: target-solar-system
   mDatasetName: Vuforia/LibroVirtual.xml
   mCastedBehaviour: {fileID: 1823647864}
   mMeshFilter: {fileID: 0}
@@ -1461,7 +1461,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
+  m_BackGroundColor: {r: 0, g: 0.003921569, b: 0.14901961, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
