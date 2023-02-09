@@ -39,7 +39,10 @@ public class SoundManager : MonoBehaviour
     public static SoundManager SharedInstance;
 
     //Para controlar cuándo el sonido está silenciado
-    private bool soundMuted;   
+    private bool soundMuted;
+
+    //Para controlar si se ha cargado ya la configuración inicial de sonido
+    private bool initialConfigurationCharged = false;
 
     //Para almacenar el volumen inicial de los sonidos
     private float initialMusicVolume, initialSFXVolume;
@@ -60,7 +63,13 @@ public class SoundManager : MonoBehaviour
 
     private void Start() {
         initialMusicVolume = musicSource.volume;
-        initialSFXVolume = effectsSource.volume;        
+        initialSFXVolume = effectsSource.volume;
+
+        if(SettingsManager.SharedInstance.CheckIfSettingActivated(TypeOfSetting.VOLUME_ON) == StatusOfSetting.NO)
+            MuteAllSounds();
+        if(SettingsManager.SharedInstance.CheckIfSettingActivated(TypeOfSetting.VOLUME_ON) == StatusOfSetting.YES)
+            RestoreAllSounds();
+
     }
 
     //Reproduce un efecto de sonido, deteniendo antes el que pudiera estar reproduciéndose ya
@@ -127,16 +136,23 @@ public class SoundManager : MonoBehaviour
 
     public void ChangeVolumeSounds()
     {
-        if(soundMuted)
+        if(initialConfigurationCharged)
         {
-            Debug.Log("Activando sonidos");
-            RestoreAllSounds();
+            if(soundMuted)
+            {
+                Debug.Log("Activando sonidos");
+                RestoreAllSounds();
+                SettingsManager.SharedInstance.SetSettingStatus(TypeOfSetting.VOLUME_ON, StatusOfSetting.YES);
+            }
+            else
+            {
+                Debug.Log("Silenciando sonidos");
+                MuteAllSounds();
+                SettingsManager.SharedInstance.SetSettingStatus(TypeOfSetting.VOLUME_ON, StatusOfSetting.NO);
+            }
         }
         else
-        {
-            Debug.Log("Silenciando sonidos");
-            MuteAllSounds();
-        }
+            initialConfigurationCharged = true;//La primera vez que se ejecute el método se limita a modificar esto
     }
 
     public void StopAllSFX()

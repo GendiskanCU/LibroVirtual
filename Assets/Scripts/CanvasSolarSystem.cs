@@ -109,6 +109,26 @@ public class CanvasSolarSystem : MonoBehaviour
 
         jSONDataProvider = new SolarSystemJSONDataProvider();
         celestialBodies = jSONDataProvider.GetCelestialBodies();
+
+        
+        //El botón de sonido mostrará el icono adecuado a la configuración 
+        Toggle toggleSoundButton = soundButton.GetComponentInChildren(typeof(Toggle), true) as Toggle;        
+        if(SettingsManager.SharedInstance.CheckIfSettingActivated(TypeOfSetting.VOLUME_ON) == StatusOfSetting.NO)
+        {            
+            if(toggleSoundButton != null)
+                toggleSoundButton.isOn = true;
+        }
+        else
+        {
+            SoundManager.SharedInstance.ChangeVolumeSounds();//Fuerza en todo caso la primera ejecución de este método
+        }
+
+        //El sistema solar rotará confirme a la configuración guardada
+        if(SettingsManager.SharedInstance.CheckIfSettingActivated(TypeOfSetting.ROTATION_ON) == StatusOfSetting.YES)        
+            solarSystemRotated = false;                    
+        else        
+            solarSystemRotated = true;                    
+        RotateSolarSystem();
     }
 
 
@@ -255,6 +275,11 @@ public class CanvasSolarSystem : MonoBehaviour
         }
 
         solarSystemRotated = !solarSystemRotated;
+
+        if(solarSystemRotated)
+            SettingsManager.SharedInstance.SetSettingStatus(TypeOfSetting.ROTATION_ON, StatusOfSetting.YES);
+        else
+            SettingsManager.SharedInstance.SetSettingStatus(TypeOfSetting.ROTATION_ON, StatusOfSetting.NO);
     }
 
     public void ReturnToMainScreen()
