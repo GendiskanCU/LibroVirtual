@@ -84,7 +84,7 @@ public class CanvasSolarSystem : MonoBehaviour
 
      [SerializeField]
      [Tooltip("Velocidad a la que se irán mostrando la información, en caracteres/segundo")]
-    private int charactersPerSecond = 20;
+    private int charactersPerSecond = 5;
 
     //Para controlar cuándo se está mostrando el panel de información de un cuerpo celestial
     private bool panelInfoIsShowing = false;
@@ -101,6 +101,11 @@ public class CanvasSolarSystem : MonoBehaviour
     private float acceleratedTimeScale = 4.0f;
     private float reducedTimeScale = 0.1f;
 
+    //Para controlar la corutina que mostrará la información de manera progresiva
+    private IEnumerator infoCoroutine;
+
+    //Para controlar la posición del contenedor de información de los cuerpos celestiales
+    private GameObject infoContent;
 
     private void Start()
     {
@@ -109,6 +114,8 @@ public class CanvasSolarSystem : MonoBehaviour
 
         jSONDataProvider = new SolarSystemJSONDataProvider();
         celestialBodies = jSONDataProvider.GetCelestialBodies();
+
+        infoContent = descriptionText.gameObject.transform.parent.gameObject;        
 
         
         //El botón de sonido mostrará el icono adecuado a la configuración 
@@ -172,32 +179,40 @@ public class CanvasSolarSystem : MonoBehaviour
             dayText.text = string.Format("DURACIÓN DE UN DÍA: {0}", celestialBodyFound.DayLenght);
             yearText.text = string.Format("DURACIÓN DE UN AÑO: {0}", celestialBodyFound.YearLenght);
             distanceText.text = string.Format("DISTANCIA AL SOL: {0} millones de Kms.", celestialBodyFound.SunDistance);
-            descriptionText.text = celestialBodyFound.Description;
+            //descriptionText.text = celestialBodyFound.Description;
 
             panelBodyInformation.gameObject.SetActive(true);
             panelInfoIsShowing = true;
 
             
-            /*Alternativa utilizando una corutina para mostrar el texto carácter a carácter
+            //Alternativa utilizando una corutina para mostrar el texto carácter a carácter
             SoundManager.SharedInstance.PlayWritingInfoSound();
-            StartCoroutine(SetInfoText(string.Format("{0}", celestialBodyFound.Description))); */
+            descriptionText.text = "";
+            infoCoroutine = SetInfoText(celestialBodyFound.Description);
+            StartCoroutine(infoCoroutine);
         }
     }
 
     private IEnumerator SetInfoText(string info)
-    {
-        foreach(var character in info)
-        {
+    {        
+        foreach(char character in info)
+        {            
             descriptionText.text += character;
             yield return new WaitForSeconds(1.0f / (charactersPerSecond / Time.timeScale));
         }
 
+        Debug.Log("Fin de la información");
         SoundManager.SharedInstance.StopAllSFX();
     }
 
     //Reinicia y desactiva el panel de información de un cuerpo celestial
     public void HideCelestialBodyInfo()
     {
+        StopCoroutine(infoCoroutine);
+
+        infoContent.GetComponent<RectTransform>().localPosition =
+            new Vector3(0, 0, 0) ;        
+
         nameText.text = "";
         bodyImage.sprite = null;
         massText.text = "";

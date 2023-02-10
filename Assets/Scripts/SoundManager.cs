@@ -76,9 +76,9 @@ public class SoundManager : MonoBehaviour
     private void PlaySound(AudioClip clipToPlay)
     {
         effectsSource.Stop();
-        effectsSource.clip = clipToPlay;
+        //effectsSource.loop = false;        
         effectsSource.pitch = 1;
-        effectsSource.Play();
+        effectsSource.PlayOneShot(clipToPlay);
     }
 
      //Reproduce un clip de música, deteniendo antes el que pudiera estar reproduciéndose ya
@@ -131,7 +131,9 @@ public class SoundManager : MonoBehaviour
 
     public void PlayWritingInfoSound()
     {
-        effectsSource.PlayOneShot(showInfoSound);
+        effectsSource.loop = true;
+        effectsSource.clip = showInfoSound;
+        effectsSource.Play();
     }
 
     public void ChangeVolumeSounds()
@@ -158,6 +160,7 @@ public class SoundManager : MonoBehaviour
     public void StopAllSFX()
     {
         effectsSource.Stop();
+        effectsSource.loop = false;
     }
    
 }

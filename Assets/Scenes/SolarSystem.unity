@@ -998,6 +998,10 @@ PrefabInstance:
       propertyPath: theSolarSystem
       value: 
       objectReference: {fileID: 1699452619}
+    - target: {fileID: 914197655, guid: 6d708bf50fe6e164fa7e0670f2db6da4, type: 3}
+      propertyPath: charactersPerSecond
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 931932047, guid: 6d708bf50fe6e164fa7e0670f2db6da4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
@@ -1502,7 +1506,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 0.85
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
